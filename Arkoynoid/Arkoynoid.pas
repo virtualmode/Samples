@@ -38,16 +38,16 @@ type
   ClassObject = Class
   Private
   Public
-    x, y, w, h:Integer; // Положение и размеры объекта.
-    xv, yv:Integer; // Скорости движения объектов по осям OX и OY.
-    Health:Integer; // Очки здоровья.
+    x, y, w, h:Integer; // РџРѕР»РѕР¶РµРЅРёРµ Рё СЂР°Р·РјРµСЂС‹ РѕР±СЉРµРєС‚Р°.
+    xv, yv:Integer; // РЎРєРѕСЂРѕСЃС‚Рё РґРІРёР¶РµРЅРёСЏ РѕР±СЉРµРєС‚РѕРІ РїРѕ РѕСЃСЏРј OX Рё OY.
+    Health:Integer; // РћС‡РєРё Р·РґРѕСЂРѕРІСЊСЏ.
     Sound:TMediaPlayer;
-    Background, Outline:TColor; // Цвет контура и фона объекта.
-    Procedure Reflect(Obj:ClassObject; IsArk:Boolean); // Метод проверки на столкновение с другим объектом.
+    Background, Outline:TColor; // Р¦РІРµС‚ РєРѕРЅС‚СѓСЂР° Рё С„РѕРЅР° РѕР±СЉРµРєС‚Р°.
+    Procedure Reflect(Obj:ClassObject; IsArk:Boolean); // РњРµС‚РѕРґ РїСЂРѕРІРµСЂРєРё РЅР° СЃС‚РѕР»РєРЅРѕРІРµРЅРёРµ СЃ РґСЂСѓРіРёРј РѕР±СЉРµРєС‚РѕРј.
     Procedure Reset; Virtual; Abstract;
-    Procedure Hit; Virtual; Abstract; // Метод попадания в объект.
-    Procedure Move(ScrWidth, ScrHeight:Integer); // Метод движения объекта.
-    Procedure Render(Bitmap:TBitmap); Virtual; Abstract; // Метод отрисовки объекта.
+    Procedure Hit; Virtual; Abstract; // РњРµС‚РѕРґ РїРѕРїР°РґР°РЅРёСЏ РІ РѕР±СЉРµРєС‚.
+    Procedure Move(ScrWidth, ScrHeight:Integer); // РњРµС‚РѕРґ РґРІРёР¶РµРЅРёСЏ РѕР±СЉРµРєС‚Р°.
+    Procedure Render(Bitmap:TBitmap); Virtual; Abstract; // РњРµС‚РѕРґ РѕС‚СЂРёСЃРѕРІРєРё РѕР±СЉРµРєС‚Р°.
   End;
 
   ClassLevel = Class
@@ -61,18 +61,18 @@ type
   ClassInfo = Class
   Private
   Public
-    Started:Boolean; // Флаг начала игры.
-    Score:Longint; // Счет.
-    Mode:Integer; // Режим игры (0 - обычный, 1 - молниеносный).
+    Started:Boolean; // Р¤Р»Р°Рі РЅР°С‡Р°Р»Р° РёРіСЂС‹.
+    Score:Longint; // РЎС‡РµС‚.
+    Mode:Integer; // Р РµР¶РёРј РёРіСЂС‹ (0 - РѕР±С‹С‡РЅС‹Р№, 1 - РјРѕР»РЅРёРµРЅРѕСЃРЅС‹Р№).
     Seconds:Longint;
-    Balls, Bricks:Integer; // Счетчики текущего кол-ва шаров и кирпичей на сцене.
+    Balls, Bricks:Integer; // РЎС‡РµС‚С‡РёРєРё С‚РµРєСѓС‰РµРіРѕ РєРѕР»-РІР° С€Р°СЂРѕРІ Рё РєРёСЂРїРёС‡РµР№ РЅР° СЃС†РµРЅРµ.
     Procedure Render(Canvas:TCanvas; x, y:Integer);
   End;
 
   ClassArkoynoid = Class(ClassObject)
   Private
   Public
-    Procedure Reset; Override; // Метод сброса всех параметров объекта.
+    Procedure Reset; Override; // РњРµС‚РѕРґ СЃР±СЂРѕСЃР° РІСЃРµС… РїР°СЂР°РјРµС‚СЂРѕРІ РѕР±СЉРµРєС‚Р°.
     Procedure Render(Bitmap:TBitmap); Override;
     Procedure Hit; Override;
   End;
@@ -80,7 +80,7 @@ type
   ClassBall = Class(ClassObject)
   Private
   Public
-    OnArk:Boolean; // Флаг принадлежности к аркойноиду.
+    OnArk:Boolean; // Р¤Р»Р°Рі РїСЂРёРЅР°РґР»РµР¶РЅРѕСЃС‚Рё Рє Р°СЂРєРѕР№РЅРѕРёРґСѓ.
     Procedure Reset; Override;
     Procedure Render(Bitmap:TBitmap); Override;
     Procedure Hit; Override;
@@ -89,7 +89,7 @@ type
   ClassBrick = Class(ClassObject)
   Private
   Public
-    Mode:Integer; // Тип кирпича.
+    Mode:Integer; // РўРёРї РєРёСЂРїРёС‡Р°.
     Procedure Reset; Override;
     Procedure Render(Bitmap:TBitmap); Override;
     Procedure Hit; Override;
@@ -98,7 +98,7 @@ type
   ClassFeature = Class(ClassObject)
   Private
   Public
-    Mode:Integer; // Тип фишки.
+    Mode:Integer; // РўРёРї С„РёС€РєРё.
     Procedure Reset; Override;
     Procedure Render(Bitmap:TBitmap); Override;
     Procedure Hit; Override;
@@ -112,7 +112,7 @@ Const
 var
   frmArkoynoid: TfrmArkoynoid;
   i, j:Integer;
-  State:Integer; // Состояние игрового процесса (0 - нет игры, 1 - игра, 2 - пауза, 3 - раунд выигран, 4 - раунд проигран).
+  State:Integer; // РЎРѕСЃС‚РѕСЏРЅРёРµ РёРіСЂРѕРІРѕРіРѕ РїСЂРѕС†РµСЃСЃР° (0 - РЅРµС‚ РёРіСЂС‹, 1 - РёРіСЂР°, 2 - РїР°СѓР·Р°, 3 - СЂР°СѓРЅРґ РІС‹РёРіСЂР°РЅ, 4 - СЂР°СѓРЅРґ РїСЂРѕРёРіСЂР°РЅ).
   Info:ClassInfo;
   Level:ClassLevel;
   Ark:ClassArkoynoid;
@@ -128,26 +128,26 @@ implementation
 Procedure LoadResources;
   Var i:Integer;
 Begin
-  // Инициализация информации:
+  // РРЅРёС†РёР°Р»РёР·Р°С†РёСЏ РёРЅС„РѕСЂРјР°С†РёРё:
   Info := ClassInfo.Create;
-  // Инициализация уровня:
+  // РРЅРёС†РёР°Р»РёР·Р°С†РёСЏ СѓСЂРѕРІРЅСЏ:
   Level := ClassLevel.Create;
-  // Инициализация аркойноида:
+  // РРЅРёС†РёР°Р»РёР·Р°С†РёСЏ Р°СЂРєРѕР№РЅРѕРёРґР°:
   Ark := ClassArkoynoid.Create;
   Ark.Reset;
-  // Инициализация мячей:
+  // РРЅРёС†РёР°Р»РёР·Р°С†РёСЏ РјСЏС‡РµР№:
   For i := 1 To MAX_BALLS Do
   Begin
     Ball[i] := ClassBall.Create;
     Ball[i].Reset;
   End;
-  // Инициализация фишек:
+  // РРЅРёС†РёР°Р»РёР·Р°С†РёСЏ С„РёС€РµРє:
   For i := 1 To MAX_FEATURES Do
   Begin
     Feature[i] := ClassFeature.Create;
     Feature[i].Reset;
   End;
-  // Инициализация кирпичей:
+  // РРЅРёС†РёР°Р»РёР·Р°С†РёСЏ РєРёСЂРїРёС‡РµР№:
   For i:= 1 To MAX_BRICKS Do
   Begin
     Brick[i] := ClassBrick.Create;
@@ -179,15 +179,15 @@ Begin
   Canvas.Font.Color := clWhite;
   Canvas.Font.Size := 10;
     
-  Canvas.TextOut(x, y,       'Счет:');
-  Canvas.TextOut(x, y + 80,  'Режим:');
-  Canvas.TextOut(x, y + 160, 'Секунд прошло:');
-  Canvas.TextOut(x, y + 370, 'Общий счет:');
+  Canvas.TextOut(x, y,       'РЎС‡РµС‚:');
+  Canvas.TextOut(x, y + 80,  'Р РµР¶РёРј:');
+  Canvas.TextOut(x, y + 160, 'РЎРµРєСѓРЅРґ РїСЂРѕС€Р»Рѕ:');
+  Canvas.TextOut(x, y + 370, 'РћР±С‰РёР№ СЃС‡РµС‚:');
     
   Canvas.Font.Size := 15;
   Str(Info.Score, Buffer);
   Canvas.TextOut(x, y + 20, Buffer);
-  If (Info.Mode = 1) Then Canvas.TextOut(x, y + 100, 'Молниеносный') Else Canvas.TextOut(x, y + 100, 'Обычный');
+  If (Info.Mode = 1) Then Canvas.TextOut(x, y + 100, 'РњРѕР»РЅРёРµРЅРѕСЃРЅС‹Р№') Else Canvas.TextOut(x, y + 100, 'РћР±С‹С‡РЅС‹Р№');
   Str(Info.Seconds, Buffer);
   Canvas.TextOut(x, y + 180, Buffer);
 
@@ -198,26 +198,26 @@ Begin
   Canvas.TextOut(x, y + 393, Buffer);
 End;
 
-// *** Код методов объекта:
+// *** РљРѕРґ РјРµС‚РѕРґРѕРІ РѕР±СЉРµРєС‚Р°:
 
 Procedure ClassObject.Reflect(Obj:ClassObject; IsArk:Boolean);
 Begin
   If ((Health > 0) And (Obj.Health > 0)) Then
     If ((X - Obj.w < Obj.x) And (Obj.x < x + w)) And ((y - Obj.h < Obj.y) And (Obj.y < y + h)) Then
     Begin
-      // Изменяем направление движения столкнувшихся объектов:
+      // РР·РјРµРЅСЏРµРј РЅР°РїСЂР°РІР»РµРЅРёРµ РґРІРёР¶РµРЅРёСЏ СЃС‚РѕР»РєРЅСѓРІС€РёС…СЃСЏ РѕР±СЉРµРєС‚РѕРІ:
       yv := yv*(-1);
-      // Делаем сталкновение более плавным:
+      // Р”РµР»Р°РµРј СЃС‚Р°Р»РєРЅРѕРІРµРЅРёРµ Р±РѕР»РµРµ РїР»Р°РІРЅС‹Рј:
       if (Obj.y < y) Then
         y := Obj.y + Obj.h
       Else
         y := Obj.y - h;
-      // Смещение по оси OX при соответствующем соударении с арком:
+      // РЎРјРµС‰РµРЅРёРµ РїРѕ РѕСЃРё OX РїСЂРё СЃРѕРѕС‚РІРµС‚СЃС‚РІСѓСЋС‰РµРј СЃРѕСѓРґР°СЂРµРЅРёРё СЃ Р°СЂРєРѕРј:
       if (IsArk) Then
       Begin
         xv := (Abs(x - Obj.x) * 10) Div Obj.w - 5;
       End;
-      // Произошло столкновение двух объектов:
+      // РџСЂРѕРёР·РѕС€Р»Рѕ СЃС‚РѕР»РєРЅРѕРІРµРЅРёРµ РґРІСѓС… РѕР±СЉРµРєС‚РѕРІ:
       Hit;
       Obj.Hit;
     End;
@@ -232,7 +232,7 @@ Begin
   if (y < 0) Then Begin yv := yv*(-1); y := 0; End;
 End;
 
-// *** Код методов уровня:
+// *** РљРѕРґ РјРµС‚РѕРґРѕРІ СѓСЂРѕРІРЅСЏ:
 
 Procedure ClassLevel.Render(Bitmap:TBitmap);
 Begin
@@ -244,7 +244,7 @@ Begin
   Bitmap.Canvas.Brush.Color := RGB(0, 47, 94);
 End;
 
-// *** Код методов аркойноида:
+// *** РљРѕРґ РјРµС‚РѕРґРѕРІ Р°СЂРєРѕР№РЅРѕРёРґР°:
 
 Procedure ClassArkoynoid.Reset;
 Begin
@@ -275,7 +275,7 @@ Procedure ClassArkoynoid.Hit;
 Begin
 End;
 
-// *** Код методов шара:
+// *** РљРѕРґ РјРµС‚РѕРґРѕРІ С€Р°СЂР°:
 
 Procedure ClassBall.Reset;
 Begin
@@ -302,7 +302,7 @@ Procedure ClassBall.Hit;
 Begin
 End;
 
-// *** Код методов фишки:
+// *** РљРѕРґ РјРµС‚РѕРґРѕРІ С„РёС€РєРё:
 
 Procedure ClassFeature.Reset;
 Begin
@@ -320,24 +320,24 @@ Begin
   Begin
     Bitmap.Canvas.Pen.Color := Outline;
     Case Mode Of
-      1: Begin // Увеличение вертикальной скорости мяча:
+      1: Begin // РЈРІРµР»РёС‡РµРЅРёРµ РІРµСЂС‚РёРєР°Р»СЊРЅРѕР№ СЃРєРѕСЂРѕСЃС‚Рё РјСЏС‡Р°:
            Bitmap.Canvas.Brush.Color := clRed;
            Bitmap.Canvas.Ellipse(x, y, x + w, y + h);
            Bitmap.Canvas.Brush.Color := RGB(0, 47, 94);
            Bitmap.Canvas.Ellipse(x+3, y+3, x+w-3, y+h-3);
          End;
-      2: Begin // Увеличение размера:
+      2: Begin // РЈРІРµР»РёС‡РµРЅРёРµ СЂР°Р·РјРµСЂР°:
            Bitmap.Canvas.Brush.Color := clBlue;
            Bitmap.Canvas.Ellipse(x, y, x + w, y + h);
            Bitmap.Canvas.Brush.Color := RGB(0, 47, 94);
            Bitmap.Canvas.Ellipse(x+3, y+3, x+w-3, y+h-3);
          End;
-    Else // Добавление шарика:
+    Else // Р”РѕР±Р°РІР»РµРЅРёРµ С€Р°СЂРёРєР°:
       Bitmap.Canvas.Brush.Color := clGreen;
       Bitmap.Canvas.Ellipse(x, y, x + w, y + h);
       Bitmap.Canvas.Brush.Color := RGB(0, 47, 94);
       Bitmap.Canvas.Ellipse(x+3, y+3, x+w-3, y+h-3);
-      Mode := 0; // Сброс типа фишки для избежания ошибок.
+      Mode := 0; // РЎР±СЂРѕСЃ С‚РёРїР° С„РёС€РєРё РґР»СЏ РёР·Р±РµР¶Р°РЅРёСЏ РѕС€РёР±РѕРє.
     End;
   End;
 End;
@@ -345,7 +345,7 @@ End;
 Procedure ClassFeature.Hit;
 Begin
   Case (Mode) Of
-    0: Begin // Новый мячик.
+    0: Begin // РќРѕРІС‹Р№ РјСЏС‡РёРє.
          For j := 1 To MAX_BALLS Do
            If (Ball[j].Health = 0) Then
            Begin
@@ -357,7 +357,7 @@ Begin
              Break;
            End;
        End;
-    1: Begin // Увеличение скорости.
+    1: Begin // РЈРІРµР»РёС‡РµРЅРёРµ СЃРєРѕСЂРѕСЃС‚Рё.
            For j := 1 To MAX_BALLS Do
              If (Ball[j].Health > 0) Then Ball[j].yv := Round(Ball[j].yv * 1.15);
        End;
@@ -368,7 +368,7 @@ Begin
   Health := 0;
 End;
 
-// *** Код методов кирпича:
+// *** РљРѕРґ РјРµС‚РѕРґРѕРІ РєРёСЂРїРёС‡Р°:
 
 Procedure ClassBrick.Reset;
 Begin
@@ -419,7 +419,7 @@ Begin
     End;
   End; 
   Case Mode Of
-  1: Begin // Кидаем сюрприз.
+  1: Begin // РљРёРґР°РµРј СЃСЋСЂРїСЂРёР·.
        Info.Score := Info.Score + 15;
        For j := 1 To MAX_FEATURES Do
          If (Feature[j].Health = 0) Then
@@ -438,7 +438,7 @@ Begin
 End;
 
 // ------------------------------------------------------------
-// Метод изменения размера формы:
+// РњРµС‚РѕРґ РёР·РјРµРЅРµРЅРёСЏ СЂР°Р·РјРµСЂР° С„РѕСЂРјС‹:
 procedure TfrmArkoynoid.FormResize(Sender: TObject);
 begin
   ImgArkoynoid.Width := frmArkoynoid.ClientWidth - ImgArkoynoid.Left*2 - 200;
@@ -449,23 +449,23 @@ begin
   Canvas.Rectangle(0, 0, Width, Height);
 end;
 
-// Метод инициализации формы:
+// РњРµС‚РѕРґ РёРЅРёС†РёР°Р»РёР·Р°С†РёРё С„РѕСЂРјС‹:
 procedure TfrmArkoynoid.FormCreate(Sender: TObject);
 begin
   State := 0;
-  // Инициализация элементов формы:
+  // РРЅРёС†РёР°Р»РёР·Р°С†РёСЏ СЌР»РµРјРµРЅС‚РѕРІ С„РѕСЂРјС‹:
   ImgArkoynoid.Left := 10;
   ImgArkoynoid.Top := 10;
-  // Загрузка звуков:
+  // Р—Р°РіСЂСѓР·РєР° Р·РІСѓРєРѕРІ:
   mp1.FileName := 'music01.mp3';
   mp1.Open;
   mp2.FileName := 'Sound03.mp3';
   mp2.Open;
-  // Запуск новой игры:
+  // Р—Р°РїСѓСЃРє РЅРѕРІРѕР№ РёРіСЂС‹:
   mnuNewGameClick(nil);
 end;
 
-// *** Вспомогательный метод для вывода текста в канвас:
+// *** Р’СЃРїРѕРјРѕРіР°С‚РµР»СЊРЅС‹Р№ РјРµС‚РѕРґ РґР»СЏ РІС‹РІРѕРґР° С‚РµРєСЃС‚Р° РІ РєР°РЅРІР°СЃ:
 Procedure TextOut(Canvas:TCanvas; x, y:Integer; Text:String; Color, BkColor:TColor; Size:Integer);
 Begin
   Canvas.Font.Color := Color;
@@ -474,43 +474,43 @@ Begin
   Canvas.TextOut(x, y, Text);
 End;
 
-// *** Метод создания новой игры:
+// *** РњРµС‚РѕРґ СЃРѕР·РґР°РЅРёСЏ РЅРѕРІРѕР№ РёРіСЂС‹:
 procedure TfrmArkoynoid.mnuNewGameClick(Sender: TObject);
 begin
-  // Изменяем параметры формы и её элементов:
+  // РР·РјРµРЅСЏРµРј РїР°СЂР°РјРµС‚СЂС‹ С„РѕСЂРјС‹ Рё РµС‘ СЌР»РµРјРµРЅС‚РѕРІ:
   TmrSeconds.Enabled := False;
-  ImgArkoynoid.Cursor := crNone; // Прячем курсор.
+  ImgArkoynoid.Cursor := crNone; // РџСЂСЏС‡РµРј РєСѓСЂСЃРѕСЂ.
   FormResize(nil);
-  // Загружаем ресурсы:
-  DisposeResources; // Очищаем старые ресурсы.
-  LoadResources; // Инициализация игровых ресурсов.
-  // Загрузка начальной информации:
+  // Р—Р°РіСЂСѓР¶Р°РµРј СЂРµСЃСѓСЂСЃС‹:
+  DisposeResources; // РћС‡РёС‰Р°РµРј СЃС‚Р°СЂС‹Рµ СЂРµСЃСѓСЂСЃС‹.
+  LoadResources; // РРЅРёС†РёР°Р»РёР·Р°С†РёСЏ РёРіСЂРѕРІС‹С… СЂРµСЃСѓСЂСЃРѕРІ.
+  // Р—Р°РіСЂСѓР·РєР° РЅР°С‡Р°Р»СЊРЅРѕР№ РёРЅС„РѕСЂРјР°С†РёРё:
   With Info Do
   Begin
-    Mode := Random(2); // Выбираем случайный режим игры.
+    Mode := Random(2); // Р’С‹Р±РёСЂР°РµРј СЃР»СѓС‡Р°Р№РЅС‹Р№ СЂРµР¶РёРј РёРіСЂС‹.
     Score := 0;
-    Seconds := 0; // Всего секунд с начала раунда.
-    Bricks := 0; // Нет кирпичей.
-    Balls := 0; // Нет шаров.
+    Seconds := 0; // Р’СЃРµРіРѕ СЃРµРєСѓРЅРґ СЃ РЅР°С‡Р°Р»Р° СЂР°СѓРЅРґР°.
+    Bricks := 0; // РќРµС‚ РєРёСЂРїРёС‡РµР№.
+    Balls := 0; // РќРµС‚ С€Р°СЂРѕРІ.
     Started := False;
   End;
-  // Загрузка уровня:
+  // Р—Р°РіСЂСѓР·РєР° СѓСЂРѕРІРЅСЏ:
   Level.Background := RGB(0, 47, 94);
   Level.Outline := clWhite;
-  // Загрузка аркойнойда:
+  // Р—Р°РіСЂСѓР·РєР° Р°СЂРєРѕР№РЅРѕР№РґР°:
   With Ark Do
   Begin
     x := ImgArkoynoid.Width Div 2 - 40;
     y := 500;
   End;
-  // Загрузка шара:
+  // Р—Р°РіСЂСѓР·РєР° С€Р°СЂР°:
   Inc(Info.Balls);
   With Ball[1] Do
   Begin
     OnArk := True;
     Health := 1;
   End;
-  // Загрузка кирпичей:
+  // Р—Р°РіСЂСѓР·РєР° РєРёСЂРїРёС‡РµР№:
   Randomize;
   For i := 1 To 13 Do
   Begin
@@ -528,14 +528,14 @@ begin
         Health := 1;
       End;
   End;
-  // Работа со звуками:
+  // Р Р°Р±РѕС‚Р° СЃРѕ Р·РІСѓРєР°РјРё:
   mp1.Stop;
   mp1.Position := 0;
-  // Начало обработки уровня, т.е. сама игра:
+  // РќР°С‡Р°Р»Рѕ РѕР±СЂР°Р±РѕС‚РєРё СѓСЂРѕРІРЅСЏ, С‚.Рµ. СЃР°РјР° РёРіСЂР°:
   TmrArkoynoid.Enabled := True;
 end;
 
-// *** Метод выхода из игры:
+// *** РњРµС‚РѕРґ РІС‹С…РѕРґР° РёР· РёРіСЂС‹:
 procedure TfrmArkoynoid.mnuExitClick(Sender: TObject);
 begin
   TmrArkoynoid.Enabled := True;
@@ -543,11 +543,11 @@ begin
   Close;
 end;
 
-// *** Метод щелканья мышкой по основному полю с игрой:
+// *** РњРµС‚РѕРґ С‰РµР»РєР°РЅСЊСЏ РјС‹С€РєРѕР№ РїРѕ РѕСЃРЅРѕРІРЅРѕРјСѓ РїРѕР»СЋ СЃ РёРіСЂРѕР№:
 procedure TfrmArkoynoid.ImgArkoynoidClick(Sender: TObject);
 begin
-  For i := 1 To MAX_BALLS Do Ball[i].OnArk := False; // Отпускаем все шарики в полет.
-  // Начинаем игру и подсчет всех очков после нажатия игрока на кнопку мыши:
+  For i := 1 To MAX_BALLS Do Ball[i].OnArk := False; // РћС‚РїСѓСЃРєР°РµРј РІСЃРµ С€Р°СЂРёРєРё РІ РїРѕР»РµС‚.
+  // РќР°С‡РёРЅР°РµРј РёРіСЂСѓ Рё РїРѕРґСЃС‡РµС‚ РІСЃРµС… РѕС‡РєРѕРІ РїРѕСЃР»Рµ РЅР°Р¶Р°С‚РёСЏ РёРіСЂРѕРєР° РЅР° РєРЅРѕРїРєСѓ РјС‹С€Рё:
   If (Info.Started = False) Then
   Begin
     mp1.Play;
@@ -556,13 +556,13 @@ begin
   End;
 end;
 
-// *** Метод управления аркойноидом:
+// *** РњРµС‚РѕРґ СѓРїСЂР°РІР»РµРЅРёСЏ Р°СЂРєРѕР№РЅРѕРёРґРѕРј:
 procedure TfrmArkoynoid.ImgArkoynoidMouseMove(Sender: TObject;
   Shift: TShiftState; X, Y: Integer);
 begin
   If (State = 1) Then
   Begin
-    // Обновление положения аркойнойда:
+    // РћР±РЅРѕРІР»РµРЅРёРµ РїРѕР»РѕР¶РµРЅРёСЏ Р°СЂРєРѕР№РЅРѕР№РґР°:
     if (Ark.xv <> 0) Then
       if (X < 0) Then Ark.X := 0
       Else
@@ -574,32 +574,32 @@ begin
   End;
 end;
 
-// *** Таймер для отсчета секунд:
+// *** РўР°Р№РјРµСЂ РґР»СЏ РѕС‚СЃС‡РµС‚Р° СЃРµРєСѓРЅРґ:
 procedure TfrmArkoynoid.TmrSecondsTimer(Sender: TObject);
 begin
-  Inc(Info.Seconds); // Прошла очередная секунда.
+  Inc(Info.Seconds); // РџСЂРѕС€Р»Р° РѕС‡РµСЂРµРґРЅР°СЏ СЃРµРєСѓРЅРґР°.
 end;
 
-// *** Метод обновления экрана (геймплэй и сам игровой процесс):
+// *** РњРµС‚РѕРґ РѕР±РЅРѕРІР»РµРЅРёСЏ СЌРєСЂР°РЅР° (РіРµР№РјРїР»СЌР№ Рё СЃР°Рј РёРіСЂРѕРІРѕР№ РїСЂРѕС†РµСЃСЃ):
 procedure TfrmArkoynoid.TmrArkoynoidTimer(Sender: TObject);
 begin
-  // Проверка состояния игры:
+  // РџСЂРѕРІРµСЂРєР° СЃРѕСЃС‚РѕСЏРЅРёСЏ РёРіСЂС‹:
   If (Info.Bricks = 0) Then State := 3 Else If (Info.Balls = 0) Then State := 4;
-  // Выполнение действий в соответствии с состоянием:
-  If (State > 2) Then // Игра закончена по одной из двух причин:
+  // Р’С‹РїРѕР»РЅРµРЅРёРµ РґРµР№СЃС‚РІРёР№ РІ СЃРѕРѕС‚РІРµС‚СЃС‚РІРёРё СЃ СЃРѕСЃС‚РѕСЏРЅРёРµРј:
+  If (State > 2) Then // РРіСЂР° Р·Р°РєРѕРЅС‡РµРЅР° РїРѕ РѕРґРЅРѕР№ РёР· РґРІСѓС… РїСЂРёС‡РёРЅ:
   Begin
-    ImgArkoynoid.Cursor := crDefault; // Восстанавливаем курсор.
-    TmrArkoynoid.Enabled := False; // Отключаем основной таймер.
-    TmrSeconds.Enabled := False; // Отключаем отсчет секунд.
-    mp1.Stop; // Отключаем музыку, если таковая была.
+    ImgArkoynoid.Cursor := crDefault; // Р’РѕСЃСЃС‚Р°РЅР°РІР»РёРІР°РµРј РєСѓСЂСЃРѕСЂ.
+    TmrArkoynoid.Enabled := False; // РћС‚РєР»СЋС‡Р°РµРј РѕСЃРЅРѕРІРЅРѕР№ С‚Р°Р№РјРµСЂ.
+    TmrSeconds.Enabled := False; // РћС‚РєР»СЋС‡Р°РµРј РѕС‚СЃС‡РµС‚ СЃРµРєСѓРЅРґ.
+    mp1.Stop; // РћС‚РєР»СЋС‡Р°РµРј РјСѓР·С‹РєСѓ, РµСЃР»Рё С‚Р°РєРѕРІР°СЏ Р±С‹Р»Р°.
     mp1.Position := 0;
-    If (State = 4) Then // Игрок проиграл:
+    If (State = 4) Then // РРіСЂРѕРє РїСЂРѕРёРіСЂР°Р»:
     Begin
       mp3.FileName := 'Sound02.mp3';
       mp3.Open;
       mp3.Play;
     End Else
-      If (State = 3) Then // Игрок выиграл:
+      If (State = 3) Then // РРіСЂРѕРє РІС‹РёРіСЂР°Р»:
       Begin
         mp3.FileName := 'Sound01.mp3';
         mp3.Open;
@@ -607,11 +607,11 @@ begin
       End;
   End Else Begin
     If ((Info.Started = True) And (mp1.Position = mp1.Length)) Then Begin mp1.Position := 0; mp1.Play; End;
-    // Прорисовка информации:
+    // РџСЂРѕСЂРёСЃРѕРІРєР° РёРЅС„РѕСЂРјР°С†РёРё:
     Info.Render(Canvas, ImgArkoynoid.Left + ImgArkoynoid.Width + 13, 80);
-    // Прорисовка уровня:
+    // РџСЂРѕСЂРёСЃРѕРІРєР° СѓСЂРѕРІРЅСЏ:
     Level.Render(ImgArkoynoid.Picture.Bitmap);
-    // Обновление положения мячей:
+    // РћР±РЅРѕРІР»РµРЅРёРµ РїРѕР»РѕР¶РµРЅРёСЏ РјСЏС‡РµР№:
     For i := 1 To MAX_BALLS Do
     Begin
       If (Ball[i].Health > 0) Then
@@ -631,7 +631,7 @@ begin
             Ball[i].Reflect(Ark, True);
             For j := 1 To MAX_BRICKS Do Ball[i].Reflect(Brick[j], False);
             For j := 1 To MAX_BALLS Do If (i <> j) Then Ball[i].Reflect(Ball[j], False);
-            // Зверский режим (все объекты взаимодействуют):
+            // Р—РІРµСЂСЃРєРёР№ СЂРµР¶РёРј (РІСЃРµ РѕР±СЉРµРєС‚С‹ РІР·Р°РёРјРѕРґРµР№СЃС‚РІСѓСЋС‚):
             If (Info.Mode = 1) Then
               For j := 1 To MAX_FEATURES Do Ball[i].Reflect(Feature[j], False);
           End;
@@ -639,18 +639,18 @@ begin
         Ball[i].Render(ImgArkoynoid.Picture.Bitmap);
       End;
     End;
-    // Обновление кирпичей:
+    // РћР±РЅРѕРІР»РµРЅРёРµ РєРёСЂРїРёС‡РµР№:
     For i := 1 To MAX_BRICKS Do Brick[i].Render(ImgArkoynoid.Picture.Bitmap);
-    // Обновление фишек:
+    // РћР±РЅРѕРІР»РµРЅРёРµ С„РёС€РµРє:
     For i := 1 To MAX_FEATURES Do
     Begin
       Feature[i].Move(ImgArkoynoid.Width, ImgArkoynoid.Height);
       Feature[i].Reflect(Ark, False);
       
       Feature[i].Render(ImgArkoynoid.Picture.Bitmap);
-      If (Feature[i].y > ImgArkoynoid.Height) Then Feature[i].Health := 0; // Фишка вылетела за границы экрана (освобождаем ресурс).
+      If (Feature[i].y > ImgArkoynoid.Height) Then Feature[i].Health := 0; // Р¤РёС€РєР° РІС‹Р»РµС‚РµР»Р° Р·Р° РіСЂР°РЅРёС†С‹ СЌРєСЂР°РЅР° (РѕСЃРІРѕР±РѕР¶РґР°РµРј СЂРµСЃСѓСЂСЃ).
     End;
-    // Прорисовка аркойнойда:
+    // РџСЂРѕСЂРёСЃРѕРІРєР° Р°СЂРєРѕР№РЅРѕР№РґР°:
     For i := 1 To MAX_BRICKS Do Ark.Reflect(Brick[i], False);
     Ark.Render(ImgArkoynoid.Picture.Bitmap);
   End;

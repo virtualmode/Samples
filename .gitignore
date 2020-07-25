@@ -1,2 +1,38 @@
+# Regular development files:
+*.d
+*.gch
+*.i
+*.iobj
+*.ipdb
+*.log
+*.o
+*.obj
+*.pch
+*.stackdump
+
+# Windows:
+desktop.ini
+
+# OSX:
+.DS_Store
+
+# Visual Studio temporary files and folders:
+.git/
+.vs/
+bin/
+obj/
+[Dd]ebug/
+[Rr]elease/
+packages/
+*.aps
+*.cache
+*.ipch
+*.opensdf
+*.sdf
+*.suo
+*.user
+*.VC.db
+*.VC.opendb
+
 # Delphi:
 *.identcache

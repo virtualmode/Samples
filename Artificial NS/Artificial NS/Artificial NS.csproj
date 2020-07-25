@@ -1,0 +1,154 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="Current">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4BC244EB-EB38-4792-AB97-13203B2DEEEC}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ANS</RootNamespace>
+    <AssemblyName>Artificial NS</AssemblyName>
+    <StartupObject>ANS.Program</StartupObject>
+    <ApplicationIcon>Resources\IconANS.ico</ApplicationIcon>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Essence\ClassIRNN1.cs" />
+    <Compile Include="FormANS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormANS.Designer.cs">
+      <DependentUpon>FormANS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Artificial NS.cs" />
+    <Compile Include="FormCreate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCreate.Designer.cs">
+      <DependentUpon>FormCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormImgRcg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormImgRcg.Designer.cs">
+      <DependentUpon>FormImgRcg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMemorize.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMemorize.Designer.cs">
+      <DependentUpon>FormMemorize.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPenProperties.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPenProperties.Designer.cs">
+      <DependentUpon>FormPenProperties.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormANS.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormANS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCreate.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormImgRcg.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormImgRcg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMemorize.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormMemorize.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPenProperties.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormPenProperties.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IconANS.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ImageDelete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ImageNew.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ImageOpen.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ImageSave.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ImageAddImg.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ImageImgRcg.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ImageClose.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ImageRefresh.bmp" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
