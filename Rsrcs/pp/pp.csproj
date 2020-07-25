@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{375DB06A-6729-4D7B-BAC7-F3D2F47DD739}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>pp</RootNamespace>
+    <AssemblyName>pp</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>pp.cPp</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\iPp.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <NoWin32Manifest>true</NoWin32Manifest>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="cDb.cs" />
+    <Compile Include="Reports\cReport.cs" />
+    <Compile Include="Reports\cRsrcReport.cs" />
+    <Compile Include="Tabs\cTab.cs" />
+    <Compile Include="Tabs\cPath.cs" />
+    <Compile Include="cSettings.cs" />
+    <Compile Include="Tabs\cSoldier.cs" />
+    <Compile Include="Tabs\cTask.cs" />
+    <Compile Include="Tabs\cMachine.cs" />
+    <Compile Include="fPp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fPp.designer.cs">
+      <DependentUpon>fPp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cPp.cs" />
+    <Compile Include="Tabs\cWeapon.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="fPp.resx">
+      <DependentUpon>fPp.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="example.pp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iSave.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iNew.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iOpen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iSoldiers.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iTasks.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iReport.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iPp.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iOptions.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iDelete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iSoldier.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iTruck.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iGsm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iGun.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iPreview.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
