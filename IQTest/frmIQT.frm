@@ -98,7 +98,7 @@ Begin VB.Form Label1
    End
    Begin VB.Label lblYA 
       BackStyle       =   0  'Transparent
-      Caption         =   "Ваш ответ:"
+      Caption         =   "Р’Р°С€ РѕС‚РІРµС‚:"
       BeginProperty Font 
          Name            =   "Arial"
          Size            =   15.75
@@ -135,7 +135,7 @@ Begin VB.Form Label1
    Begin VB.Label lblInfo 
       Alignment       =   2  'Center
       BackStyle       =   0  'Transparent
-      Caption         =   "(История 10 класс)"
+      Caption         =   "(РСЃС‚РѕСЂРёСЏ 10 РєР»Р°СЃСЃ)"
       BeginProperty Font 
          Name            =   "Arial"
          Size            =   12
@@ -156,7 +156,7 @@ Begin VB.Form Label1
    Begin VB.Label lblQN 
       Alignment       =   2  'Center
       BackStyle       =   0  'Transparent
-      Caption         =   "Вопрос 0 из 0"
+      Caption         =   "Р’РѕРїСЂРѕСЃ 0 РёР· 0"
       BeginProperty Font 
          Name            =   "Arial"
          Size            =   15.75
@@ -333,7 +333,7 @@ Begin VB.Form Label1
    End
    Begin VB.Label lblCont 
       BackStyle       =   0  'Transparent
-      Caption         =   "Далее"
+      Caption         =   "Р”Р°Р»РµРµ"
       BeginProperty Font 
          Name            =   "Arial"
          Size            =   15.75
@@ -374,7 +374,7 @@ Begin VB.Form Label1
    End
    Begin VB.Label lblBack 
       BackStyle       =   0  'Transparent
-      Caption         =   "< Назад"
+      Caption         =   "< РќР°Р·Р°Рґ"
       BeginProperty Font 
          Name            =   "Arial"
          Size            =   15.75
@@ -395,7 +395,7 @@ Begin VB.Form Label1
    Begin VB.Label lblState 
       Alignment       =   2  'Center
       BackStyle       =   0  'Transparent
-      Caption         =   "Ввод данных"
+      Caption         =   "Р’РІРѕРґ РґР°РЅРЅС‹С…"
       BeginProperty Font 
          Name            =   "Arial"
          Size            =   24
@@ -414,7 +414,7 @@ Begin VB.Form Label1
    End
    Begin VB.Label lblInstr 
       BackStyle       =   0  'Transparent
-      Caption         =   "Инструкция"
+      Caption         =   "РРЅСЃС‚СЂСѓРєС†РёСЏ"
       BeginProperty Font 
          Name            =   "Arial"
          Size            =   15.75
@@ -433,7 +433,7 @@ Begin VB.Form Label1
    End
    Begin VB.Label lblStart 
       BackStyle       =   0  'Transparent
-      Caption         =   "Запуск"
+      Caption         =   "Р—Р°РїСѓСЃРє"
       BeginProperty Font 
          Name            =   "Arial"
          Size            =   15.75
@@ -481,7 +481,7 @@ Begin VB.Form Label1
    End
    Begin VB.Label lblTest 
       BackStyle       =   0  'Transparent
-      Caption         =   "Выберите тест:"
+      Caption         =   "Р’С‹Р±РµСЂРёС‚Рµ С‚РµСЃС‚:"
       BeginProperty Font 
          Name            =   "Arial"
          Size            =   15.75
@@ -500,7 +500,7 @@ Begin VB.Form Label1
    End
    Begin VB.Label lblName 
       BackStyle       =   0  'Transparent
-      Caption         =   "Введите свое имя:"
+      Caption         =   "Р’РІРµРґРёС‚Рµ СЃРІРѕРµ РёРјСЏ:"
       BeginProperty Font 
          Name            =   "Arial"
          Size            =   15.75
@@ -519,7 +519,7 @@ Begin VB.Form Label1
    End
    Begin VB.Label lblPN 
       BackStyle       =   0  'Transparent
-      Caption         =   "IQ Tест 1.2"
+      Caption         =   "IQ TРµСЃС‚ 1.2"
       BeginProperty Font 
          Name            =   "Arial"
          Size            =   24
@@ -578,7 +578,7 @@ Begin VB.Form Label1
    End
    Begin VB.Label lblForward 
       BackStyle       =   0  'Transparent
-      Caption         =   "Далее >"
+      Caption         =   "Р”Р°Р»РµРµ >"
       BeginProperty Font 
          Name            =   "Arial"
          Size            =   15.75
@@ -598,7 +598,7 @@ Begin VB.Form Label1
    End
    Begin VB.Label lblCheck 
       BackStyle       =   0  'Transparent
-      Caption         =   "Проверить тест"
+      Caption         =   "РџСЂРѕРІРµСЂРёС‚СЊ С‚РµСЃС‚"
       BeginProperty Font 
          Name            =   "Arial"
          Size            =   15.75
@@ -665,11 +665,11 @@ End Sub
 
 Private Sub Initialize()
 
-    lblM.Caption = "IQT 1.2" + Chr(13) + Chr(10) + "Группа разработчиков программного обеспечения" + Chr(13) + Chr(10) + "Острог, 2005 - 2006."
+    lblM.Caption = "IQT 1.2" + Chr(13) + Chr(10) + "Р“СЂСѓРїРїР° СЂР°Р·СЂР°Р±РѕС‚С‡РёРєРѕРІ РїСЂРѕРіСЂР°РјРјРЅРѕРіРѕ РѕР±РµСЃРїРµС‡РµРЅРёСЏ" + Chr(13) + Chr(10) + "РћСЃС‚СЂРѕРі, 2005 - 2006."
 
     flTest.Path = App.Path
 
-    lblVirtualmode.ToolTipText = "Группа разработчиков программного обеспечения 'Острог', 2005 - 2006."
+    lblVirtualmode.ToolTipText = "Р“СЂСѓРїРїР° СЂР°Р·СЂР°Р±РѕС‚С‡РёРєРѕРІ РїСЂРѕРіСЂР°РјРјРЅРѕРіРѕ РѕР±РµСЃРїРµС‡РµРЅРёСЏ 'РћСЃС‚СЂРѕРі', 2005 - 2006."
 
     Me.Left = 0
     Me.Width = Screen.Width
@@ -867,14 +867,14 @@ Private Sub ShowQuestion(n As Integer)
     If (Mid(Trim(ReadINI("q" + Trim(Str(n)), "a", App.Path + "\" + flTest.FileName)), 1, 1) = "$") Then
         HideW03
         ShowW04
-        lblQN = "(B) Вопрос" + Str(n) + " из" + Str(aq)
+        lblQN = "(B) Р’РѕРїСЂРѕСЃ" + Str(n) + " РёР·" + Str(aq)
         If Not (a(n) = "0000") Then
             txtYA.Text = a(n)
         Else
             txtYA.Text = ""
         End If
     Else
-        lblQN = "(A) Вопрос" + Str(n) + " из" + Str(aq)
+        lblQN = "(A) Р’РѕРїСЂРѕСЃ" + Str(n) + " РёР·" + Str(aq)
         lblA.Caption = ReadINI("q" + Trim(Str(n)), "a1", App.Path + "\" + flTest.FileName)
         lblB.Caption = ReadINI("q" + Trim(Str(n)), "a2", App.Path + "\" + flTest.FileName)
         lblC.Caption = ReadINI("q" + Trim(Str(n)), "a3", App.Path + "\" + flTest.FileName)
@@ -923,11 +923,11 @@ Private Sub ShowResult()
     If (mk = 0 Or mk = 1) Then mk = 2
     HideW03
     HideW04
-    lblState.Caption = "Результат"
-    lblQuestion.Caption = txtName + ", вы ответили правильно на" + Str(mark) + " вопрос(а,ов) из" + Str(i) + "." + Chr$(10)
-    lblQuestion.Caption = lblQuestion.Caption + "Общее количество баллов" + Str(pnt) + " (из " + Trim(Str(ba)) + ")." + Chr$(10)
-    lblQuestion.Caption = lblQuestion.Caption + "Затраченное время" + Str(Val(ReadINI("Init", "t", App.Path + "\" + flTest.FileName)) - m) + " минут(а,ы)" + Chr$(10) + Chr$(10)
-    lblQuestion.Caption = lblQuestion.Caption + "Ваша оценка" + Str(mk) + "."
+    lblState.Caption = "Р РµР·СѓР»СЊС‚Р°С‚"
+    lblQuestion.Caption = txtName + ", РІС‹ РѕС‚РІРµС‚РёР»Рё РїСЂР°РІРёР»СЊРЅРѕ РЅР°" + Str(mark) + " РІРѕРїСЂРѕСЃ(Р°,РѕРІ) РёР·" + Str(i) + "." + Chr$(10)
+    lblQuestion.Caption = lblQuestion.Caption + "РћР±С‰РµРµ РєРѕР»РёС‡РµСЃС‚РІРѕ Р±Р°Р»Р»РѕРІ" + Str(pnt) + " (РёР· " + Trim(Str(ba)) + ")." + Chr$(10)
+    lblQuestion.Caption = lblQuestion.Caption + "Р—Р°С‚СЂР°С‡РµРЅРЅРѕРµ РІСЂРµРјСЏ" + Str(Val(ReadINI("Init", "t", App.Path + "\" + flTest.FileName)) - m) + " РјРёРЅСѓС‚(Р°,С‹)" + Chr$(10) + Chr$(10)
+    lblQuestion.Caption = lblQuestion.Caption + "Р’Р°С€Р° РѕС†РµРЅРєР°" + Str(mk) + "."
 
 End Sub
 
@@ -1003,10 +1003,10 @@ End Sub
 Private Sub ShowW02()
 
     lblQuestion.Visible = True
-    lblQuestion.Caption = "У вас есть n минут, чтобы ответить на все вопросы, поэтому работайте как можно быстрее. Не засиживайтесь слишком долго над каким-нибудь вопросом -возможно вы выбрали неверный метод решения, а следующую задачу вы сделаете лучше. С другой стороны, не сдавайтесь слишком легко - большинство задач можно решить, имея немного терпения. Полагайтесь лишь на свой здравый смысл, чтобы решить, когда отказаться от нерешенной задачи. И помните, что в целом сложность задач возрастает к концу теста. Все задачи имеют решение."
-    lblQuestion.Caption = lblQuestion.Caption + Chr$(10) + "Если вы не можете ответить на вопрос, не стройте догадок и пропустите его (в этом случае после n задач вам снова будут предложены те из них, которые остались без ответа, чтобы в оставшееся время вы могли снова попытаться решить их) Однако, если у вас есть идея, но вы не уверены полностью, что это действительно правильный ответ, все равно лучше укажите ее. В тестах нет 'хитрых' вопросов, но вам всегда придется рассматривать множество путей подхода к решению задачи. Убедитесь, что вы понимаете, что от вас требуется, прежде чем приступать к решению задачи - вы зря потратите время, если сразу перейдете к решению, не попробовав выяснить, в чем заключается задача."
-    lblQuestion.Caption = lblQuestion.Caption + Chr$(10) + "Количество минут, оставшихся до конца тестирования, высвечивается на таймере в нижней части экрана (таймер запускается нажатием кнопки 'Запуск' на следующей странице). Ответ, введенный после истечения отведенного времени, засчитан не будет."
-    lblQuestion.Caption = lblQuestion.Caption + Chr$(10) + "Вы можете прекратить тест, нажав кнопку 'Проверить тест' в левом нижнем углу ( кнопка активна после запуска таймера). В этом случае результаты тестирования все равно выводятся на экран."
+    lblQuestion.Caption = "РЈ РІР°СЃ РµСЃС‚СЊ n РјРёРЅСѓС‚, С‡С‚РѕР±С‹ РѕС‚РІРµС‚РёС‚СЊ РЅР° РІСЃРµ РІРѕРїСЂРѕСЃС‹, РїРѕСЌС‚РѕРјСѓ СЂР°Р±РѕС‚Р°Р№С‚Рµ РєР°Рє РјРѕР¶РЅРѕ Р±С‹СЃС‚СЂРµРµ. РќРµ Р·Р°СЃРёР¶РёРІР°Р№С‚РµСЃСЊ СЃР»РёС€РєРѕРј РґРѕР»РіРѕ РЅР°Рґ РєР°РєРёРј-РЅРёР±СѓРґСЊ РІРѕРїСЂРѕСЃРѕРј -РІРѕР·РјРѕР¶РЅРѕ РІС‹ РІС‹Р±СЂР°Р»Рё РЅРµРІРµСЂРЅС‹Р№ РјРµС‚РѕРґ СЂРµС€РµРЅРёСЏ, Р° СЃР»РµРґСѓСЋС‰СѓСЋ Р·Р°РґР°С‡Сѓ РІС‹ СЃРґРµР»Р°РµС‚Рµ Р»СѓС‡С€Рµ. РЎ РґСЂСѓРіРѕР№ СЃС‚РѕСЂРѕРЅС‹, РЅРµ СЃРґР°РІР°Р№С‚РµСЃСЊ СЃР»РёС€РєРѕРј Р»РµРіРєРѕ - Р±РѕР»СЊС€РёРЅСЃС‚РІРѕ Р·Р°РґР°С‡ РјРѕР¶РЅРѕ СЂРµС€РёС‚СЊ, РёРјРµСЏ РЅРµРјРЅРѕРіРѕ С‚РµСЂРїРµРЅРёСЏ. РџРѕР»Р°РіР°Р№С‚РµСЃСЊ Р»РёС€СЊ РЅР° СЃРІРѕР№ Р·РґСЂР°РІС‹Р№ СЃРјС‹СЃР», С‡С‚РѕР±С‹ СЂРµС€РёС‚СЊ, РєРѕРіРґР° РѕС‚РєР°Р·Р°С‚СЊСЃСЏ РѕС‚ РЅРµСЂРµС€РµРЅРЅРѕР№ Р·Р°РґР°С‡Рё. Р РїРѕРјРЅРёС‚Рµ, С‡С‚Рѕ РІ С†РµР»РѕРј СЃР»РѕР¶РЅРѕСЃС‚СЊ Р·Р°РґР°С‡ РІРѕР·СЂР°СЃС‚Р°РµС‚ Рє РєРѕРЅС†Сѓ С‚РµСЃС‚Р°. Р’СЃРµ Р·Р°РґР°С‡Рё РёРјРµСЋС‚ СЂРµС€РµРЅРёРµ."
+    lblQuestion.Caption = lblQuestion.Caption + Chr$(10) + "Р•СЃР»Рё РІС‹ РЅРµ РјРѕР¶РµС‚Рµ РѕС‚РІРµС‚РёС‚СЊ РЅР° РІРѕРїСЂРѕСЃ, РЅРµ СЃС‚СЂРѕР№С‚Рµ РґРѕРіР°РґРѕРє Рё РїСЂРѕРїСѓСЃС‚РёС‚Рµ РµРіРѕ (РІ СЌС‚РѕРј СЃР»СѓС‡Р°Рµ РїРѕСЃР»Рµ n Р·Р°РґР°С‡ РІР°Рј СЃРЅРѕРІР° Р±СѓРґСѓС‚ РїСЂРµРґР»РѕР¶РµРЅС‹ С‚Рµ РёР· РЅРёС…, РєРѕС‚РѕСЂС‹Рµ РѕСЃС‚Р°Р»РёСЃСЊ Р±РµР· РѕС‚РІРµС‚Р°, С‡С‚РѕР±С‹ РІ РѕСЃС‚Р°РІС€РµРµСЃСЏ РІСЂРµРјСЏ РІС‹ РјРѕРіР»Рё СЃРЅРѕРІР° РїРѕРїС‹С‚Р°С‚СЊСЃСЏ СЂРµС€РёС‚СЊ РёС…) РћРґРЅР°РєРѕ, РµСЃР»Рё Сѓ РІР°СЃ РµСЃС‚СЊ РёРґРµСЏ, РЅРѕ РІС‹ РЅРµ СѓРІРµСЂРµРЅС‹ РїРѕР»РЅРѕСЃС‚СЊСЋ, С‡С‚Рѕ СЌС‚Рѕ РґРµР№СЃС‚РІРёС‚РµР»СЊРЅРѕ РїСЂР°РІРёР»СЊРЅС‹Р№ РѕС‚РІРµС‚, РІСЃРµ СЂР°РІРЅРѕ Р»СѓС‡С€Рµ СѓРєР°Р¶РёС‚Рµ РµРµ. Р’ С‚РµСЃС‚Р°С… РЅРµС‚ 'С…РёС‚СЂС‹С…' РІРѕРїСЂРѕСЃРѕРІ, РЅРѕ РІР°Рј РІСЃРµРіРґР° РїСЂРёРґРµС‚СЃСЏ СЂР°СЃСЃРјР°С‚СЂРёРІР°С‚СЊ РјРЅРѕР¶РµСЃС‚РІРѕ РїСѓС‚РµР№ РїРѕРґС…РѕРґР° Рє СЂРµС€РµРЅРёСЋ Р·Р°РґР°С‡Рё. РЈР±РµРґРёС‚РµСЃСЊ, С‡С‚Рѕ РІС‹ РїРѕРЅРёРјР°РµС‚Рµ, С‡С‚Рѕ РѕС‚ РІР°СЃ С‚СЂРµР±СѓРµС‚СЃСЏ, РїСЂРµР¶РґРµ С‡РµРј РїСЂРёСЃС‚СѓРїР°С‚СЊ Рє СЂРµС€РµРЅРёСЋ Р·Р°РґР°С‡Рё - РІС‹ Р·СЂСЏ РїРѕС‚СЂР°С‚РёС‚Рµ РІСЂРµРјСЏ, РµСЃР»Рё СЃСЂР°Р·Сѓ РїРµСЂРµР№РґРµС‚Рµ Рє СЂРµС€РµРЅРёСЋ, РЅРµ РїРѕРїСЂРѕР±РѕРІР°РІ РІС‹СЏСЃРЅРёС‚СЊ, РІ С‡РµРј Р·Р°РєР»СЋС‡Р°РµС‚СЃСЏ Р·Р°РґР°С‡Р°."
+    lblQuestion.Caption = lblQuestion.Caption + Chr$(10) + "РљРѕР»РёС‡РµСЃС‚РІРѕ РјРёРЅСѓС‚, РѕСЃС‚Р°РІС€РёС…СЃСЏ РґРѕ РєРѕРЅС†Р° С‚РµСЃС‚РёСЂРѕРІР°РЅРёСЏ, РІС‹СЃРІРµС‡РёРІР°РµС‚СЃСЏ РЅР° С‚Р°Р№РјРµСЂРµ РІ РЅРёР¶РЅРµР№ С‡Р°СЃС‚Рё СЌРєСЂР°РЅР° (С‚Р°Р№РјРµСЂ Р·Р°РїСѓСЃРєР°РµС‚СЃСЏ РЅР°Р¶Р°С‚РёРµРј РєРЅРѕРїРєРё 'Р—Р°РїСѓСЃРє' РЅР° СЃР»РµРґСѓСЋС‰РµР№ СЃС‚СЂР°РЅРёС†Рµ). РћС‚РІРµС‚, РІРІРµРґРµРЅРЅС‹Р№ РїРѕСЃР»Рµ РёСЃС‚РµС‡РµРЅРёСЏ РѕС‚РІРµРґРµРЅРЅРѕРіРѕ РІСЂРµРјРµРЅРё, Р·Р°СЃС‡РёС‚Р°РЅ РЅРµ Р±СѓРґРµС‚."
+    lblQuestion.Caption = lblQuestion.Caption + Chr$(10) + "Р’С‹ РјРѕР¶РµС‚Рµ РїСЂРµРєСЂР°С‚РёС‚СЊ С‚РµСЃС‚, РЅР°Р¶Р°РІ РєРЅРѕРїРєСѓ 'РџСЂРѕРІРµСЂРёС‚СЊ С‚РµСЃС‚' РІ Р»РµРІРѕРј РЅРёР¶РЅРµРј СѓРіР»Сѓ ( РєРЅРѕРїРєР° Р°РєС‚РёРІРЅР° РїРѕСЃР»Рµ Р·Р°РїСѓСЃРєР° С‚Р°Р№РјРµСЂР°). Р’ СЌС‚РѕРј СЃР»СѓС‡Р°Рµ СЂРµР·СѓР»СЊС‚Р°С‚С‹ С‚РµСЃС‚РёСЂРѕРІР°РЅРёСЏ РІСЃРµ СЂР°РІРЅРѕ РІС‹РІРѕРґСЏС‚СЃСЏ РЅР° СЌРєСЂР°РЅ."
 
 End Sub
 
@@ -1163,7 +1163,7 @@ End Sub
 Private Sub lblCheck_Click()
 
     tmrTime.Enabled = False
-    If (MsgBox("Вы уверены, что хотите" + Chr$(10) + "проверить работу?", vbYesNo, "Проверка работы") = vbYes) Then
+    If (MsgBox("Р’С‹ СѓРІРµСЂРµРЅС‹, С‡С‚Рѕ С…РѕС‚РёС‚Рµ" + Chr$(10) + "РїСЂРѕРІРµСЂРёС‚СЊ СЂР°Р±РѕС‚Сѓ?", vbYesNo, "РџСЂРѕРІРµСЂРєР° СЂР°Р±РѕС‚С‹") = vbYes) Then
         Calculate
         tmrTime.Enabled = False
         ShowResult
@@ -1173,7 +1173,7 @@ Private Sub lblCheck_Click()
         lblCheck.Visible = False
         lblQN.Visible = False
         lblInstr.Visible = True
-        lblInstr.Caption = "Назад"
+        lblInstr.Caption = "РќР°Р·Р°Рґ"
     Else
         tmrTime.Enabled = True
     End If
@@ -1188,7 +1188,7 @@ End Sub
 
 Private Sub lblCont_Click()
 
-    lblState = "Тестирование"
+    lblState = "РўРµСЃС‚РёСЂРѕРІР°РЅРёРµ"
     lblForward.Visible = True
     lblBack.Visible = True
     lblTime.Visible = True
@@ -1232,7 +1232,7 @@ Private Sub lblExit_Click()
 
     tmrTime.Enabled = False
     If (lblA.Visible = True) Then
-        If (MsgBox("Вы уверены, что хотите" + Chr$(10) + "закончить тест?", vbYesNo, "Завершение работы") = vbYes) Then
+        If (MsgBox("Р’С‹ СѓРІРµСЂРµРЅС‹, С‡С‚Рѕ С…РѕС‚РёС‚Рµ" + Chr$(10) + "Р·Р°РєРѕРЅС‡РёС‚СЊ С‚РµСЃС‚?", vbYesNo, "Р—Р°РІРµСЂС€РµРЅРёРµ СЂР°Р±РѕС‚С‹") = vbYes) Then
             Unload Me
         Else
             tmrTime.Enabled = True
@@ -1259,12 +1259,12 @@ End Sub
 
 Private Sub lblInstr_Click()
 
-    If (lblInstr.Caption = "Инструкция") Then
+    If (lblInstr.Caption = "РРЅСЃС‚СЂСѓРєС†РёСЏ") Then
         HideW01
         ShowW02
-        lblState.Caption = "Инструкция"
+        lblState.Caption = "РРЅСЃС‚СЂСѓРєС†РёСЏ"
         lblStart.Visible = False
-        lblInstr.Caption = "Назад"
+        lblInstr.Caption = "РќР°Р·Р°Рґ"
     Else
         HideW02
         ShowW01
@@ -1272,9 +1272,9 @@ Private Sub lblInstr_Click()
         lblQuestion.Visible = False
         lblCont.Visible = False
         lblInfo.Visible = False
-        lblState.Caption = "Ввод данных"
+        lblState.Caption = "Р’РІРѕРґ РґР°РЅРЅС‹С…"
         lblStart.Visible = True
-        lblInstr.Caption = "Инструкция"
+        lblInstr.Caption = "РРЅСЃС‚СЂСѓРєС†РёСЏ"
     End If
 
 End Sub
@@ -1292,8 +1292,8 @@ Private Sub lblVirtualmode_DblClick()
     Dim j As Integer
     Dim ba As Integer
     If ((bkdoor = True) And (lblInstr.Visible = False) And (lblQuestion.Visible = True)) Then
-        If (InputBox("Введите ключ для активизации скрытых программных функций:", "Введите ключ") = "12369000") Then
-            command = InputBox("Функции активизированы. Введите команду:", "Коммандный процессор")
+        If (InputBox("Р’РІРµРґРёС‚Рµ РєР»СЋС‡ РґР»СЏ Р°РєС‚РёРІРёР·Р°С†РёРё СЃРєСЂС‹С‚С‹С… РїСЂРѕРіСЂР°РјРјРЅС‹С… С„СѓРЅРєС†РёР№:", "Р’РІРµРґРёС‚Рµ РєР»СЋС‡") = "12369000") Then
+            command = InputBox("Р¤СѓРЅРєС†РёРё Р°РєС‚РёРІРёР·РёСЂРѕРІР°РЅС‹. Р’РІРµРґРёС‚Рµ РєРѕРјР°РЅРґСѓ:", "РљРѕРјРјР°РЅРґРЅС‹Р№ РїСЂРѕС†РµСЃСЃРѕСЂ")
             ba = 0
             i = ReadINI("Init", "q", App.Path + "\" + flTest.FileName)
             For j = 1 To i
@@ -1390,13 +1390,13 @@ End Sub
 Private Sub lblStart_Click()
 
     If (Trim(txtName.Text) = "") Then
-        MsgBox "Введите свое имя!", vbInformation, "Имя не введено"
+        MsgBox "Р’РІРµРґРёС‚Рµ СЃРІРѕРµ РёРјСЏ!", vbInformation, "РРјСЏ РЅРµ РІРІРµРґРµРЅРѕ"
     Else
         If (Trim(flTest.FileName) = "") Then
-            MsgBox "Выберите тест!", vbInformation, "Тест не выбран"
+            MsgBox "Р’С‹Р±РµСЂРёС‚Рµ С‚РµСЃС‚!", vbInformation, "РўРµСЃС‚ РЅРµ РІС‹Р±СЂР°РЅ"
         Else
             If (Trim(ReadINI("Init", "q", App.Path + "\" + flTest.FileName)) = "0") Then
-                MsgBox "Данный тест не имеет вопросов и не может быть запущен!", vbInformation, "Ошибка"
+                MsgBox "Р”Р°РЅРЅС‹Р№ С‚РµСЃС‚ РЅРµ РёРјРµРµС‚ РІРѕРїСЂРѕСЃРѕРІ Рё РЅРµ РјРѕР¶РµС‚ Р±С‹С‚СЊ Р·Р°РїСѓС‰РµРЅ!", vbInformation, "РћС€РёР±РєР°"
             Else
                 HideW01
                 HideW02
@@ -1404,7 +1404,7 @@ Private Sub lblStart_Click()
                 lblInfo.Visible = True
                 lblStart.Visible = False
                 lblInstr.Visible = False
-                lblState = "Загрузка..."
+                lblState = "Р—Р°РіСЂСѓР·РєР°..."
                 InitA
                 aq = ReadINI("Init", "q", App.Path + "\" + flTest.FileName)
                 qq = 1
@@ -1415,12 +1415,12 @@ Private Sub lblStart_Click()
                     lblQuestion.Caption = ReadINI("Intro", "i", App.Path + "\" + flTest.FileName)
                     lblQuestion.Visible = True
                     lblCont.Visible = True
-                    lblInstr.Caption = "Назад"
+                    lblInstr.Caption = "РќР°Р·Р°Рґ"
                     lblInstr.Visible = True
                 Else
                     lblQuestion.Caption = ""
                     lblQuestion.Visible = True
-                    lblState = "Тестирование"
+                    lblState = "РўРµСЃС‚РёСЂРѕРІР°РЅРёРµ"
                     lblForward.Visible = True
                     lblBack.Visible = True
                     lblTime.Visible = True
@@ -1453,7 +1453,7 @@ Private Sub tmrTime_Timer()
 
     If (tio = True) Then
         Calculate
-        MsgBox "Время вышло!", vbInformation, "Работа закончена"
+        MsgBox "Р’СЂРµРјСЏ РІС‹С€Р»Рѕ!", vbInformation, "Р Р°Р±РѕС‚Р° Р·Р°РєРѕРЅС‡РµРЅР°"
         tmrTime.Enabled = False
         ShowResult
         lblTime.Visible = False
@@ -1462,7 +1462,7 @@ Private Sub tmrTime_Timer()
         lblCheck.Visible = False
         lblQN.Visible = False
         lblInstr.Visible = True
-        lblInstr.Caption = "Назад"
+        lblInstr.Caption = "РќР°Р·Р°Рґ"
     End If
     UpdateTime
     DecreaseTime

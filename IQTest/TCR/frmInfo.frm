@@ -3,7 +3,7 @@ Object = "{3B7C8863-D78F-101B-B9B5-04021C009402}#1.2#0"; "RICHTX32.OCX"
 Begin VB.Form frmInfo 
    BackColor       =   &H00000000&
    BorderStyle     =   1  'Fixed Single
-   Caption         =   "Доп. информация"
+   Caption         =   "Р”РѕРї. РёРЅС„РѕСЂРјР°С†РёСЏ"
    ClientHeight    =   10710
    ClientLeft      =   45
    ClientTop       =   435
@@ -88,7 +88,7 @@ Begin VB.Form frmInfo
    Begin VB.Label lblDelete 
       BackColor       =   &H00000000&
       BackStyle       =   0  'Transparent
-      Caption         =   "Очистить доп. информацию"
+      Caption         =   "РћС‡РёСЃС‚РёС‚СЊ РґРѕРї. РёРЅС„РѕСЂРјР°С†РёСЋ"
       BeginProperty Font 
          Name            =   "Arial"
          Size            =   15.75
@@ -109,7 +109,7 @@ Begin VB.Form frmInfo
       Alignment       =   2  'Center
       BackColor       =   &H00000000&
       BackStyle       =   0  'Transparent
-      Caption         =   "© virtualmode"
+      Caption         =   "В© virtualmode"
       ForeColor       =   &H00FFBB8E&
       Height          =   735
       Left            =   165
@@ -140,7 +140,7 @@ Begin VB.Form frmInfo
    Begin VB.Label Label1 
       BackColor       =   &H00000000&
       BackStyle       =   0  'Transparent
-      Caption         =   "Текст:"
+      Caption         =   "РўРµРєСЃС‚:"
       BeginProperty Font 
          Name            =   "Arial"
          Size            =   15.75
@@ -160,7 +160,7 @@ Begin VB.Form frmInfo
    Begin VB.Label lblName 
       BackColor       =   &H00000000&
       BackStyle       =   0  'Transparent
-      Caption         =   "Заголовок:"
+      Caption         =   "Р—Р°РіРѕР»РѕРІРѕРє:"
       BeginProperty Font 
          Name            =   "Arial"
          Size            =   15.75
@@ -210,7 +210,7 @@ End Sub
 Private Sub Form_Load()
 
     Draw Me, 0, RGB(0, 0, 0), RGB(1, 100, 248)
-    lblVirtualmode.Caption = "IQT 1.2" + Chr(13) + Chr(10) + "Группа разработчиков программного обеспечения" + Chr(13) + Chr(10) + "Острог, 2005 - 2006 :)"
+    lblVirtualmode.Caption = "IQT 1.2" + Chr(13) + Chr(10) + "Р“СЂСѓРїРїР° СЂР°Р·СЂР°Р±РѕС‚С‡РёРєРѕРІ РїСЂРѕРіСЂР°РјРјРЅРѕРіРѕ РѕР±РµСЃРїРµС‡РµРЅРёСЏ" + Chr(13) + Chr(10) + "РћСЃС‚СЂРѕРі, 2005 - 2006 :)"
     If (Trim(ReadINI("Init", "i", App.Path + "\" + frmTCR.flTest.FileName)) = "1") Then
         txtTopic.Text = Trim(ReadINI("Intro", "t", App.Path + "\" + frmTCR.flTest.FileName))
         txtText.Text = Trim(ReadINI("Intro", "i", App.Path + "\" + frmTCR.flTest.FileName))
@@ -230,7 +230,7 @@ End Sub
 
 Private Sub lblDelete_Click()
 
-    If (MsgBox("Вы уверены, что хотите удалить доп.информацию" + Chr$(10) + "из теста?", vbYesNo, "Запрос на удаление") = vbYes) Then
+    If (MsgBox("Р’С‹ СѓРІРµСЂРµРЅС‹, С‡С‚Рѕ С…РѕС‚РёС‚Рµ СѓРґР°Р»РёС‚СЊ РґРѕРї.РёРЅС„РѕСЂРјР°С†РёСЋ" + Chr$(10) + "РёР· С‚РµСЃС‚Р°?", vbYesNo, "Р—Р°РїСЂРѕСЃ РЅР° СѓРґР°Р»РµРЅРёРµ") = vbYes) Then
         WriteINI "Init", "i", "0", App.Path + "\" + frmTCR.flTest.FileName
         WriteINI "Intro", "t", "0", App.Path + "\" + frmTCR.flTest.FileName
         WriteINI "Intro", "i", "0", App.Path + "\" + frmTCR.flTest.FileName

@@ -1,6 +1,6 @@
 Attribute VB_Name = "mdlGradient"
 '+--------------------------------------------------------+'
-'|Класс для градиентной заливки                           |'
+'|РљР»Р°СЃСЃ РґР»СЏ РіСЂР°РґРёРµРЅС‚РЅРѕР№ Р·Р°Р»РёРІРєРё                           |'
 '+--------------------------------------------------------+'
 'API>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 Private Declare Function CreatePen Lib "gdi32" (ByVal nPenStyle As Long, ByVal nWidth As Long, ByVal crColor As Long) As Long
@@ -175,14 +175,14 @@ Dim uaTmpPts()  As PointSng
     fLongSide = IIf(lWidth > lHeight, lWidth, lHeight)
     fDist = (Sqr((fLongSide ^ 2) + (fLongSide ^ 2)) + 2) / 2
     
-    'Create points to the left and the right at a 0є angle (horizontal)
+    'Create points to the left and the right at a 0С” angle (horizontal)
     uaTmpPts(0).X = uaTmpPts(2).X - fDist
     uaTmpPts(0).Y = uaTmpPts(2).Y
     uaTmpPts(1).X = uaTmpPts(2).X + fDist
     uaTmpPts(1).Y = uaTmpPts(2).Y
     
     'Lines will be drawn perpendicular to mfAngle so
-    'add 90є and correct for 360є wrap
+    'add 90С” and correct for 360С” wrap
     fAngle = CDbl(mfAngle + 90) - Int(Int(CDbl(mfAngle + 90) / 360#) * 360#)
     
     'Rotate second and third points to fAngle
@@ -316,7 +316,7 @@ Dim uaTmpPts()  As PointSng
     Next lIdx
 DrawGradient = lIdx
 NormalExit:
-'Очистить memory
+'РћС‡РёСЃС‚РёС‚СЊ memory
     Erase laColors
     Erase uaPts
     Erase uaTmpPts

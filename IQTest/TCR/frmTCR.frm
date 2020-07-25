@@ -3,7 +3,7 @@ Object = "{3B7C8863-D78F-101B-B9B5-04021C009402}#1.2#0"; "RICHTX32.OCX"
 Begin VB.Form frmTCR 
    BackColor       =   &H00000000&
    BorderStyle     =   1  'Fixed Single
-   Caption         =   "Утилита создания тестов"
+   Caption         =   "РЈС‚РёР»РёС‚Р° СЃРѕР·РґР°РЅРёСЏ С‚РµСЃС‚РѕРІ"
    ClientHeight    =   10710
    ClientLeft      =   45
    ClientTop       =   435
@@ -160,7 +160,7 @@ Begin VB.Form frmTCR
       Alignment       =   1  'Right Justify
       BackColor       =   &H00000000&
       BackStyle       =   0  'Transparent
-      Caption         =   "30 минут(а) на тест"
+      Caption         =   "30 РјРёРЅСѓС‚(Р°) РЅР° С‚РµСЃС‚"
       BeginProperty Font 
          Name            =   "Arial"
          Size            =   15.75
@@ -181,7 +181,7 @@ Begin VB.Form frmTCR
    Begin VB.Label lblBack 
       BackColor       =   &H00000000&
       BackStyle       =   0  'Transparent
-      Caption         =   "Назад"
+      Caption         =   "РќР°Р·Р°Рґ"
       BeginProperty Font 
          Name            =   "Arial"
          Size            =   15.75
@@ -203,7 +203,7 @@ Begin VB.Form frmTCR
       Alignment       =   1  'Right Justify
       BackColor       =   &H00000000&
       BackStyle       =   0  'Transparent
-      Caption         =   "Далее"
+      Caption         =   "Р”Р°Р»РµРµ"
       BeginProperty Font 
          Name            =   "Arial"
          Size            =   15.75
@@ -224,7 +224,7 @@ Begin VB.Form frmTCR
    Begin VB.Label lblInfo 
       BackColor       =   &H00000000&
       BackStyle       =   0  'Transparent
-      Caption         =   "Доп. информация"
+      Caption         =   "Р”РѕРї. РёРЅС„РѕСЂРјР°С†РёСЏ"
       BeginProperty Font 
          Name            =   "Arial"
          Size            =   15.75
@@ -245,7 +245,7 @@ Begin VB.Form frmTCR
    Begin VB.Label lblAnswer 
       BackColor       =   &H00000000&
       BackStyle       =   0  'Transparent
-      Caption         =   "Ответ:"
+      Caption         =   "РћС‚РІРµС‚:"
       BeginProperty Font 
          Name            =   "Arial"
          Size            =   15.75
@@ -350,7 +350,7 @@ Begin VB.Form frmTCR
    Begin VB.Label lblType 
       BackColor       =   &H00000000&
       BackStyle       =   0  'Transparent
-      Caption         =   "(A) вопрос"
+      Caption         =   "(A) РІРѕРїСЂРѕСЃ"
       BeginProperty Font 
          Name            =   "Arial"
          Size            =   15.75
@@ -371,7 +371,7 @@ Begin VB.Form frmTCR
    Begin VB.Label lblQuestion 
       BackColor       =   &H00000000&
       BackStyle       =   0  'Transparent
-      Caption         =   "Вопрос 1 из 1:"
+      Caption         =   "Р’РѕРїСЂРѕСЃ 1 РёР· 1:"
       BeginProperty Font 
          Name            =   "Arial"
          Size            =   15.75
@@ -392,7 +392,7 @@ Begin VB.Form frmTCR
    Begin VB.Label lblRename 
       BackColor       =   &H00000000&
       BackStyle       =   0  'Transparent
-      Caption         =   "Переименовать"
+      Caption         =   "РџРµСЂРµРёРјРµРЅРѕРІР°С‚СЊ"
       BeginProperty Font 
          Name            =   "Arial"
          Size            =   15.75
@@ -412,7 +412,7 @@ Begin VB.Form frmTCR
    Begin VB.Label lblDel 
       BackColor       =   &H00000000&
       BackStyle       =   0  'Transparent
-      Caption         =   "Удалить"
+      Caption         =   "РЈРґР°Р»РёС‚СЊ"
       BeginProperty Font 
          Name            =   "Arial"
          Size            =   15.75
@@ -432,7 +432,7 @@ Begin VB.Form frmTCR
    Begin VB.Label lblCreate 
       BackColor       =   &H00000000&
       BackStyle       =   0  'Transparent
-      Caption         =   "Создать"
+      Caption         =   "РЎРѕР·РґР°С‚СЊ"
       BeginProperty Font 
          Name            =   "Arial"
          Size            =   15.75
@@ -452,7 +452,7 @@ Begin VB.Form frmTCR
    Begin VB.Label lblName 
       BackColor       =   &H00000000&
       BackStyle       =   0  'Transparent
-      Caption         =   "Название теста:"
+      Caption         =   "РќР°Р·РІР°РЅРёРµ С‚РµСЃС‚Р°:"
       BeginProperty Font 
          Name            =   "Arial"
          Size            =   15.75
@@ -493,7 +493,7 @@ Begin VB.Form frmTCR
       Alignment       =   2  'Center
       BackColor       =   &H00000000&
       BackStyle       =   0  'Transparent
-      Caption         =   "© virtualmode"
+      Caption         =   "В© virtualmode"
       ForeColor       =   &H00FFBB8E&
       Height          =   735
       Left            =   165
@@ -505,7 +505,7 @@ Begin VB.Form frmTCR
       Alignment       =   1  'Right Justify
       BackColor       =   &H00000000&
       BackStyle       =   0  'Transparent
-      Caption         =   "1 балл(а, ов)"
+      Caption         =   "1 Р±Р°Р»Р»(Р°, РѕРІ)"
       BeginProperty Font 
          Name            =   "Arial"
          Size            =   15.75
@@ -740,16 +740,16 @@ Private Sub ShowQuestion(n As Integer)
 
     ShowG
     aq = n
-    lblQuestion.Caption = "Вопрос " + Trim(Str(n)) + " из " + Trim(Str(pq))
+    lblQuestion.Caption = "Р’РѕРїСЂРѕСЃ " + Trim(Str(n)) + " РёР· " + Trim(Str(pq))
     txtQuestion.Text = ReadINI("q" + Trim(Str(n)), "q", App.Path + "\" + flTest.FileName)
-    lblMark.Caption = ReadINI("q" + Trim(Str(n)), "b", App.Path + "\" + flTest.FileName) + " балл(а, ов)"
+    lblMark.Caption = ReadINI("q" + Trim(Str(n)), "b", App.Path + "\" + flTest.FileName) + " Р±Р°Р»Р»(Р°, РѕРІ)"
     If (Mid(ReadINI("q" + Trim(Str(n)), "a", App.Path + "\" + flTest.FileName), 1, 1) = "$") Then
-        lblType.Caption = "(B) вопрос"
+        lblType.Caption = "(B) РІРѕРїСЂРѕСЃ"
         HideA
         ShowB
         txtAnswer.Text = Mid(ReadINI("q" + Trim(Str(n)), "a", App.Path + "\" + flTest.FileName), 2)
     Else
-        lblType.Caption = "(A) вопрос"
+        lblType.Caption = "(A) РІРѕРїСЂРѕСЃ"
         HideB
         ShowA
         UpdateShp
@@ -766,9 +766,9 @@ Private Sub ShowQuestion(n As Integer)
         lblBack.ForeColor = RGB(255, 255, 255)
     End If
     If (aq = pq) Then
-        lblForward.Caption = "Добавить"
+        lblForward.Caption = "Р”РѕР±Р°РІРёС‚СЊ"
     Else
-        lblForward.Caption = "Далее"
+        lblForward.Caption = "Р”Р°Р»РµРµ"
     End If
 
 End Sub
@@ -778,13 +778,13 @@ Private Sub Initialize()
     pq = Val(ReadINI("Init", "q", App.Path + "\" + flTest.FileName))
     lblInfo.Visible = True
     lblTime.Visible = True
-    lblTime.Caption = Trim(ReadINI("Init", "t", App.Path + "\" + flTest.FileName)) + " минут(а) на тест"
+    lblTime.Caption = Trim(ReadINI("Init", "t", App.Path + "\" + flTest.FileName)) + " РјРёРЅСѓС‚(Р°) РЅР° С‚РµСЃС‚"
     If (Trim(ReadINI("Init", "q", App.Path + "\" + flTest.FileName)) = "0") Then
         HideA
         HideB
         HideG
         lblForward.Visible = True
-        lblForward.Caption = "Добавить"
+        lblForward.Caption = "Р”РѕР±Р°РІРёС‚СЊ"
     Else
         ShowQuestion 1
     End If
@@ -803,7 +803,7 @@ Private Sub Form_Load()
 
     flTest.Path = App.Path
     Draw Me, 0, RGB(0, 0, 0), RGB(1, 100, 248)
-    lblVirtualmode.Caption = "IQT 1.2" + Chr(13) + Chr(10) + "Группа разработчиков программного обеспечения" + Chr(13) + Chr(10) + "Острог, 2005 - 2006 :)"
+    lblVirtualmode.Caption = "IQT 1.2" + Chr(13) + Chr(10) + "Р“СЂСѓРїРїР° СЂР°Р·СЂР°Р±РѕС‚С‡РёРєРѕРІ РїСЂРѕРіСЂР°РјРјРЅРѕРіРѕ РѕР±РµСЃРїРµС‡РµРЅРёСЏ" + Chr(13) + Chr(10) + "РћСЃС‚СЂРѕРі, 2005 - 2006 :)"
 
 End Sub
 
@@ -904,13 +904,13 @@ End Sub
 Private Sub lblCreate_Click()
 
     Dim s As String
-    s = InputBox("Введите имя теста:", "Создание теста")
+    s = InputBox("Р’РІРµРґРёС‚Рµ РёРјСЏ С‚РµСЃС‚Р°:", "РЎРѕР·РґР°РЅРёРµ С‚РµСЃС‚Р°")
     s = Trim(s)
     If Not (s = "") Then
         WriteINI "Init", "q", "0", App.Path + "\" + s + ".iqt"
         WriteINI "Init", "t", "0", App.Path + "\" + s + ".iqt"
     Else
-        MsgBox "Имя теста не было введено. Файл не создан!", vbInformation, "Нет данных"
+        MsgBox "РРјСЏ С‚РµСЃС‚Р° РЅРµ Р±С‹Р»Рѕ РІРІРµРґРµРЅРѕ. Р¤Р°Р№Р» РЅРµ СЃРѕР·РґР°РЅ!", vbInformation, "РќРµС‚ РґР°РЅРЅС‹С…"
     End If
     flTest.Refresh
 
@@ -944,11 +944,11 @@ End Sub
 Private Sub lblDel_Click()
 
     If Not (Trim(flTest.FileName) = "") Then
-        If (MsgBox("Удалить файл " + flTest.FileName + "?", vbYesNo, "Подтверждение") = vbYes) Then Kill App.Path + "\" + flTest.FileName
+        If (MsgBox("РЈРґР°Р»РёС‚СЊ С„Р°Р№Р» " + flTest.FileName + "?", vbYesNo, "РџРѕРґС‚РІРµСЂР¶РґРµРЅРёРµ") = vbYes) Then Kill App.Path + "\" + flTest.FileName
         flTest.Refresh
         Hide0
     Else
-        MsgBox "Файл не выбран!", vbInformation, "Нет данных"
+        MsgBox "Р¤Р°Р№Р» РЅРµ РІС‹Р±СЂР°РЅ!", vbInformation, "РќРµС‚ РґР°РЅРЅС‹С…"
     End If
 
 End Sub
@@ -967,13 +967,13 @@ Private Sub lblForward_Click()
     Else
         pq = pq + 1
         WriteINI "Init", "q", Trim(Str(pq)), App.Path + "\" + flTest.FileName
-        WriteINI "q" + Trim(Str(pq)), "q", "[Введите в это поле вопрос. <Enter> использовать запрещено!]", App.Path + "\" + flTest.FileName
+        WriteINI "q" + Trim(Str(pq)), "q", "[Р’РІРµРґРёС‚Рµ РІ СЌС‚Рѕ РїРѕР»Рµ РІРѕРїСЂРѕСЃ. <Enter> РёСЃРїРѕР»СЊР·РѕРІР°С‚СЊ Р·Р°РїСЂРµС‰РµРЅРѕ!]", App.Path + "\" + flTest.FileName
         WriteINI "q" + Trim(Str(pq)), "a", "0000", App.Path + "\" + flTest.FileName
         WriteINI "q" + Trim(Str(pq)), "b", "1", App.Path + "\" + flTest.FileName
-        WriteINI "q" + Trim(Str(pq)), "a1", "[Ответ A]", App.Path + "\" + flTest.FileName
-        WriteINI "q" + Trim(Str(pq)), "a2", "[Ответ B]", App.Path + "\" + flTest.FileName
-        WriteINI "q" + Trim(Str(pq)), "a3", "[Ответ C]", App.Path + "\" + flTest.FileName
-        WriteINI "q" + Trim(Str(pq)), "a4", "[Ответ D]", App.Path + "\" + flTest.FileName
+        WriteINI "q" + Trim(Str(pq)), "a1", "[РћС‚РІРµС‚ A]", App.Path + "\" + flTest.FileName
+        WriteINI "q" + Trim(Str(pq)), "a2", "[РћС‚РІРµС‚ B]", App.Path + "\" + flTest.FileName
+        WriteINI "q" + Trim(Str(pq)), "a3", "[РћС‚РІРµС‚ C]", App.Path + "\" + flTest.FileName
+        WriteINI "q" + Trim(Str(pq)), "a4", "[РћС‚РІРµС‚ D]", App.Path + "\" + flTest.FileName
         ShowQuestion pq
     End If
 
@@ -1002,7 +1002,7 @@ End Sub
 Private Sub lblMark_Click()
 
     Dim m As Integer
-    m = Val(InputBox("Введите кол-во баллов за данный вопрос:", "Балл за вопрос"))
+    m = Val(InputBox("Р’РІРµРґРёС‚Рµ РєРѕР»-РІРѕ Р±Р°Р»Р»РѕРІ Р·Р° РґР°РЅРЅС‹Р№ РІРѕРїСЂРѕСЃ:", "Р‘Р°Р»Р» Р·Р° РІРѕРїСЂРѕСЃ"))
     WriteINI "q" + Trim(Str(aq)), "b", Trim(Str(m)), App.Path + "\" + flTest.FileName
     ShowQuestion aq
 
@@ -1018,11 +1018,11 @@ End Sub
 Private Sub lblQuestion_Click()
 
     Dim i As Integer
-    i = Val(InputBox("Введите номер вопроса:", "Переход к вопросу"))
+    i = Val(InputBox("Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ РІРѕРїСЂРѕСЃР°:", "РџРµСЂРµС…РѕРґ Рє РІРѕРїСЂРѕСЃСѓ"))
     If (i > 0) And (i <= pq) Then
         ShowQuestion i
     Else
-        MsgBox "Вопроса" + Str(i) + " не существует!", vbInformation, "Ошибка"
+        MsgBox "Р’РѕРїСЂРѕСЃР°" + Str(i) + " РЅРµ СЃСѓС‰РµСЃС‚РІСѓРµС‚!", vbInformation, "РћС€РёР±РєР°"
     End If
 
 End Sub
@@ -1038,16 +1038,16 @@ Private Sub lblRename_Click()
 
     Dim s As String
     If Not (Trim(flTest.FileName) = "") Then
-        s = InputBox("Введите новое имя для файла " + flTest.FileName + ":", "Введите новое имя")
+        s = InputBox("Р’РІРµРґРёС‚Рµ РЅРѕРІРѕРµ РёРјСЏ РґР»СЏ С„Р°Р№Р»Р° " + flTest.FileName + ":", "Р’РІРµРґРёС‚Рµ РЅРѕРІРѕРµ РёРјСЏ")
         If (Trim(s) = "") Then
-            MsgBox "Новое имя теста не задано. Файл не переименован!", vbInformation, "Нет данных"
+            MsgBox "РќРѕРІРѕРµ РёРјСЏ С‚РµСЃС‚Р° РЅРµ Р·Р°РґР°РЅРѕ. Р¤Р°Р№Р» РЅРµ РїРµСЂРµРёРјРµРЅРѕРІР°РЅ!", vbInformation, "РќРµС‚ РґР°РЅРЅС‹С…"
         Else
             FileCopy App.Path + "\" + flTest.FileName, App.Path + "\" + s + ".iqt"
             Kill App.Path + "\" + flTest.FileName
         End If
         flTest.Refresh
     Else
-        MsgBox "Файл не выбран!", vbInformation, "Нет данных"
+        MsgBox "Р¤Р°Р№Р» РЅРµ РІС‹Р±СЂР°РЅ!", vbInformation, "РќРµС‚ РґР°РЅРЅС‹С…"
     End If
 
 End Sub
@@ -1062,12 +1062,12 @@ End Sub
 Private Sub lblTime_Click()
 
     Dim i As Integer
-    i = Val(InputBox("Введите время на выполнение теста:", "Время на выполнение теста"))
+    i = Val(InputBox("Р’РІРµРґРёС‚Рµ РІСЂРµРјСЏ РЅР° РІС‹РїРѕР»РЅРµРЅРёРµ С‚РµСЃС‚Р°:", "Р’СЂРµРјСЏ РЅР° РІС‹РїРѕР»РЅРµРЅРёРµ С‚РµСЃС‚Р°"))
     If (i >= 0) Then
         WriteINI "Init", "t", Trim(Str(i)), App.Path + "\" + flTest.FileName
-        lblTime.Caption = Trim(Str(i)) + " минут(а) на тест"
+        lblTime.Caption = Trim(Str(i)) + " РјРёРЅСѓС‚(Р°) РЅР° С‚РµСЃС‚"
     Else
-        MsgBox "Время не может быть отрицательным!", vbInformation, "Ошибка"
+        MsgBox "Р’СЂРµРјСЏ РЅРµ РјРѕР¶РµС‚ Р±С‹С‚СЊ РѕС‚СЂРёС†Р°С‚РµР»СЊРЅС‹Рј!", vbInformation, "РћС€РёР±РєР°"
     End If
 
 End Sub
@@ -1081,18 +1081,18 @@ End Sub
 
 Private Sub lblType_Click()
 
-    If (MsgBox("Изменить тип вопроса?", vbYesNo, "Тип вопроса") = vbYes) Then
+    If (MsgBox("РР·РјРµРЅРёС‚СЊ С‚РёРї РІРѕРїСЂРѕСЃР°?", vbYesNo, "РўРёРї РІРѕРїСЂРѕСЃР°") = vbYes) Then
         If (Mid(lblType.Caption, 1, 3) = "(A)") Then
-            lblType.Caption = "(B) вопрос"
-            WriteINI "q" + Trim(Str(aq)), "a", "$[Ответ]", App.Path + "\" + flTest.FileName
+            lblType.Caption = "(B) РІРѕРїСЂРѕСЃ"
+            WriteINI "q" + Trim(Str(aq)), "a", "$[РћС‚РІРµС‚]", App.Path + "\" + flTest.FileName
             ShowQuestion aq
         Else
-            lblType.Caption = "(A) вопрос"
+            lblType.Caption = "(A) РІРѕРїСЂРѕСЃ"
             WriteINI "q" + Trim(Str(aq)), "a", "0000", App.Path + "\" + flTest.FileName
-            WriteINI "q" + Trim(Str(aq)), "a1", "[Ответ A]", App.Path + "\" + flTest.FileName
-            WriteINI "q" + Trim(Str(aq)), "a2", "[Ответ B]", App.Path + "\" + flTest.FileName
-            WriteINI "q" + Trim(Str(aq)), "a3", "[Ответ C]", App.Path + "\" + flTest.FileName
-            WriteINI "q" + Trim(Str(aq)), "a4", "[Ответ D]", App.Path + "\" + flTest.FileName
+            WriteINI "q" + Trim(Str(aq)), "a1", "[РћС‚РІРµС‚ A]", App.Path + "\" + flTest.FileName
+            WriteINI "q" + Trim(Str(aq)), "a2", "[РћС‚РІРµС‚ B]", App.Path + "\" + flTest.FileName
+            WriteINI "q" + Trim(Str(aq)), "a3", "[РћС‚РІРµС‚ C]", App.Path + "\" + flTest.FileName
+            WriteINI "q" + Trim(Str(aq)), "a4", "[РћС‚РІРµС‚ D]", App.Path + "\" + flTest.FileName
             ShowQuestion aq
         End If
     End If
@@ -1140,7 +1140,7 @@ Private Sub txtQuestion_Change()
 
     WriteINI "q" + Trim(Str(aq)), "q", txtQuestion.Text, App.Path + "\" + flTest.FileName
     If (Trim(txtQuestion.Text) = "") And (aq = pq) And (Not (pq = 1)) Then
-        If (MsgBox("Удалить этот вопрос?", vbYesNo, "Удаление") = vbYes) Then
+        If (MsgBox("РЈРґР°Р»РёС‚СЊ СЌС‚РѕС‚ РІРѕРїСЂРѕСЃ?", vbYesNo, "РЈРґР°Р»РµРЅРёРµ") = vbYes) Then
             pq = pq - 1
             WriteINI "Init", "q", Trim(Str(pq)), App.Path + "\" + flTest.FileName
             ShowQuestion pq
