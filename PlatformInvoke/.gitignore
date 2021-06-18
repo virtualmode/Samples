@@ -1,0 +1,38 @@
+# Regular development files:
+*.d
+*.gch
+*.i
+*.iobj
+*.ipdb
+*.log
+*.o
+*.obj
+*.pch
+*.stackdump
+*.nupkg
+
+# Windows:
+desktop.ini
+
+# OSX:
+.DS_Store
+
+# IDE temporary files and folders:
+.idea/
+.git/
+.vs/
+.uml/
+bin/
+obj/
+[Dd]ebug/
+[Rr]elease/
+packages/
+*.aps
+*.cache
+*.ipch
+*.opensdf
+*.sdf
+*.suo
+*.user
+*.VC.db
+*.VC.opendb

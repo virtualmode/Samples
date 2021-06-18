@@ -1,0 +1,8 @@
+LIBRARY
+EXPORTS
+
+;
+; UnmanagedCode export file
+;
+
+GetPlatformDescription
