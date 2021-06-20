@@ -11,12 +11,7 @@ namespace PlatformInvoke
             _managedCodeObject = ManagedCodeObject.Create();
 
             Console.WriteLine(".NET Core Platform Invoke example");
-            Console.WriteLine();
             Console.WriteLine(_managedCodeObject.GetPlatformDescription());
-            Console.WriteLine();
-
-            Console.WriteLine("Press any key to continue...");
-            Console.ReadLine();
         }
     }
 }

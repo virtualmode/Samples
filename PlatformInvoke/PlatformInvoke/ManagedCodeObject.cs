@@ -44,7 +44,7 @@ namespace PlatformInvoke
 
         public string GetPlatformDescription()
         {
-            return UnmanagedPInvoke.GetCustomDescription();
+            return Marshal.PtrToStringAnsi(UnmanagedPInvoke.GetCustomDescription());
         }
 
         #endregion Methods

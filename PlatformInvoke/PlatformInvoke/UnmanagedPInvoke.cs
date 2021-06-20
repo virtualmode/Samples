@@ -20,8 +20,12 @@ namespace PlatformInvoke
 
         #region Methods
 
-        [DllImport(LIBRARY_NAME, EntryPoint = "GetPlatformDescription", CallingConvention = CallingConvention.Cdecl)]
-        public static extern string GetCustomDescription();
+        [DllImport(LIBRARY_NAME, EntryPoint = "GetPlatformDescription")]
+        public static extern IntPtr GetCustomDescription();
+
+        [DllImport(LIBRARY_NAME, EntryPoint = "GetPlatformDescription", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
+        [return: MarshalAs(UnmanagedType.LPTStr)]
+        public static extern string GetCustomDescriptionVariant();
 
         #endregion Methods
     }
