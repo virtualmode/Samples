@@ -14,12 +14,13 @@ namespace PlatformInvoke
     {
         #region Constants
 
-        private const string LIBRARY_NAME = "UnmanagedCode.dll";
+        private const string LIBRARY_NAME = "UnmanagedCode";
 
         #endregion Constants
 
         #region Methods
 
+        //[DefaultDllImportSearchPaths(DllImportSearchPath.UserDirectories)]
         [DllImport(LIBRARY_NAME, EntryPoint = "GetPlatformDescription")]
         public static extern IntPtr GetCustomDescription();
 

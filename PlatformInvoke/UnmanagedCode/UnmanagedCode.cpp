@@ -21,7 +21,12 @@ const char *GetPlatformDescription()
 
 #elif defined(PROC_OS_LINUX)
 
+	sprintf_s(_platformDescription, DESCRIPTION_SIZE, "Unmanaged %u-bit code for Linux %u.%u\n\0", sizeof(int*) * 8, 1, 0);
+
 #elif defined(PROC_OS_DARWIN)
+
+	sprintf_s(_platformDescription, DESCRIPTION_SIZE, "Unmanaged %u-bit code for macOS %u.%u\n\0", sizeof(int*) * 8, 1, 0);
+
 #else
 #error "Example has not been ported to this platform."
 #endif
