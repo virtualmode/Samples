@@ -1,0 +1,7 @@
+{
+  "additionalProbingPaths": [
+    "Win32",
+    "x86",
+    "x64"
+  ]
+}

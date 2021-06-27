@@ -1,6 +1,11 @@
 // Platform invoke example with path probing to support different architectures in different dll's.
 // NativeLibrary, DllImportResolver, AssemblyLoadContext looks like possible right solutions.
 
+// NativeLibrary introduction.
+// https://developers.redhat.com/blog/2019/09/06/interacting-with-native-libraries-in-net-core-3-0#dllimport
+// https://docs.microsoft.com/en-us/dotnet/core/rid-catalog
+// https://docs.microsoft.com/en-us/dotnet/standard/native-interop/cross-platform
+
 // Path probing.
 // https://docs.microsoft.com/en-us/dotnet/core/dependency-loading/default-probing
 // https://dev.to/jeikabu/loading-native-libraries-in-c-fh6
@@ -11,9 +16,20 @@
 // How to load library safely.
 // https://msrc-blog.microsoft.com/2014/05/13/load-library-safely/
 
+// .NET in Linux video.
+// https://www.youtube.com/watch?v=Rudg4FlD3Vs
+
+// Configuration of .NET Core for AMD64.
+// MSIL can work on any platform, but native libraries depends on configuration:
+// "Any CPU" equals to current processor architecture and can invoke only x64 native code.
+// "Any CPU with Prefer 32-bit" runs as a 32-bit application.
+// "x86" runs as a WoW64 application.
+// "x64" runs as a 64-bit application.
+
 using System;
 using System.Reflection;
 using System.Runtime.InteropServices;
+using System.Runtime.Loader;
 
 namespace PlatformInvoke
 {
@@ -24,7 +40,7 @@ namespace PlatformInvoke
         static void Main(string[] args)
         {
             // Register the import resolver before calling the imported function.
-            // Only one import resolver can be set for a given assembly.
+            // Only one import resolver can be set for a given assembly (or typeof(MyClass).Assembly).
             NativeLibrary.SetDllImportResolver(Assembly.GetExecutingAssembly(), DllImportResolver);
 
             _managedCodeObject = ManagedCodeObject.Create();
@@ -42,9 +58,12 @@ namespace PlatformInvoke
         /// <returns></returns>
         private static IntPtr DllImportResolver(string libraryName, Assembly assembly, DllImportSearchPath? searchPath)
         {
-            if (NativeLibrary.TryLoad((Environment.Is64BitProcess ? "x64/" : "x86/") + libraryName,
+            //string library = $"{Environment.CurrentDirectory}/{(Environment.Is64BitProcess ? "x64" : "x86")}/lib{libraryName}.so";
+            //string library = $"{(Environment.Is64BitProcess ? "x64" : "x86")}/{libraryName}";
+
+            if (NativeLibrary.TryLoad(libraryName,
                 assembly,
-                searchPath,
+                null, // Search without path modifiers in custom resolver.
                 out IntPtr result))
                 return result;
 
