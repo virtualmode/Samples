@@ -1,5 +1,5 @@
 // Platform invoke example with path probing to support different architectures in different dll's.
-// NativeLibrary, DllImportResolver, AssemblyLoadContext looks like possible right solutions.
+// NativeLibrary with RID's in runtimeTargets property, DllImportResolver, AssemblyLoadContext looks like possible right solutions.
 
 // NativeLibrary introduction.
 // https://developers.redhat.com/blog/2019/09/06/interacting-with-native-libraries-in-net-core-3-0#dllimport
@@ -12,6 +12,7 @@
 
 // Deep-dive into .NET Core primitives: deps.json, runtimeconfig.json, and dll's.
 // https://natemcmaster.com/blog/2017/12/21/netcore-primitives/
+// https://github.com/stuartleeks/dotnet-cli/blob/master/Documentation/specs/runtime-configuration-file.md
 
 // How to load library safely.
 // https://msrc-blog.microsoft.com/2014/05/13/load-library-safely/
@@ -25,6 +26,8 @@
 // "Any CPU with Prefer 32-bit" runs as a 32-bit application.
 // "x86" runs as a WoW64 application.
 // "x64" runs as a 64-bit application.
+
+// Project RID's <RuntimeIdentifiers>win10-x86;win10-x64</RuntimeIdentifiers> prompts only to download appropriate packages.
 
 using System;
 using System.Reflection;
@@ -41,7 +44,7 @@ namespace PlatformInvoke
         {
             // Register the import resolver before calling the imported function.
             // Only one import resolver can be set for a given assembly (or typeof(MyClass).Assembly).
-            NativeLibrary.SetDllImportResolver(Assembly.GetExecutingAssembly(), DllImportResolver);
+            //NativeLibrary.SetDllImportResolver(Assembly.GetExecutingAssembly(), DllImportResolver);
 
             _managedCodeObject = ManagedCodeObject.Create();
 

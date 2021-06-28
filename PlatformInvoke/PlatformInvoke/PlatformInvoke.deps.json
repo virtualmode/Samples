@@ -1,0 +1,33 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "PlatformInvoke/1.0.0": {
+        "runtime": {
+          "PlatformInvoke.dll": {}
+        },
+        "runtimeTargets": {
+          "Win32/UnmanagedCode.dll": {
+            "assetType": "native",
+            "rid": "win10-x86"
+          },
+          "x64/UnmanagedCode.dll": {
+            "assetType": "native",
+            "rid": "win10-x64"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "PlatformInvoke/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
