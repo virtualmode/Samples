@@ -1,7 +1,10 @@
 // Unmanaged code for platform invoke example.
 
 // Compile for Linux.
-// gcc UnmanagedCode.cpp -shared -o ../bin/Debug/libUnmanagedCode.so -fPIC
+// gcc UnmanagedCode.cpp -shared -o ../bin/Debug/x64/libUnmanagedCode.so -fPIC
+
+// Compile for macOS.
+// gcc UnmanagedCode.cpp -shared -o ../bin/Debug/x64/libUnmanagedCode.dylib -fPIC
 
 // Help definitions.
 #include "Dependency.h"
@@ -41,10 +44,15 @@ __attribute__ ((visibility ("default"))) const char *GetPlatformDescription()
 
 #elif defined(PROC_OS_DARWIN)
 
-const char *GetPlatformDescription()
+extern "C"
 {
-	sprintf_s(_platformDescription, DESCRIPTION_SIZE, "Unmanaged %u-bit code for macOS %u.%u\n\0", sizeof(int*) * 8, 1, 0);
+
+__attribute__ ((visibility ("default"))) const char *GetPlatformDescription()
+{
+	sprintf(_platformDescription, "Unmanaged %u-bit code for macOS :)\n\0");
 	return _platformDescription;
+}
+
 }
 
 #else
