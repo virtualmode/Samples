@@ -1,24 +1,34 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net5.0</TargetFramework>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
-    <!-- <RuntimeIdentifiers>win10-x86;win10-x64</RuntimeIdentifiers> -->
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <OutputPath>$(SolutionDir)bin\$(Configuration)\</OutputPath>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <OutputPath>$(SolutionDir)bin\$(Configuration)\</OutputPath>
+    <!--<RuntimeIdentifiers>win10-x86;win10-x64</RuntimeIdentifiers>-->
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\PInvokePackage\PInvokePackage.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- This is only for example. -->
     <None Update="PlatformInvoke.deps.json">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- https://github.com/dotnet/sdk/issues/8645 -->
+    <!-- For ProjectReference *.deps.json file updates only with this hack. -->
+    <!-- GenerateBuildDependencyFile requires a package in order to include runtimeTargets. Tack them on to an existing package. -->
+    <PackageReference Include="Microsoft.NETCore.Platforms" Version="5.0.0" />
+    <RuntimeTargetsCopyLocalItems Include="..\PInvokePackage\runtimes\**\*.dll;..\PInvokePackage\runtimes\**\*.so;..\PInvokePackage\runtimes\**\*.dylib"
+      AssetType="native"
+      DestinationSubDirectory="runtimes\%(RecursiveDir)"
+      NuGetPackageId="Microsoft.NETCore.Platforms"
+      RuntimeIdentifier="$([System.String]::new('%(RecursiveDir)').Split('\\')[0].Split('/')[0])" />
+    <Content Include="@(RuntimeTargetsCopyLocalItems)" Link="%(DestinationSubDirectory)\%(FileName)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 
 </Project>

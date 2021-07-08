@@ -1,17 +1,15 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace PlatformInvoke
+namespace PInvokePackage
 {
     /// <summary>
     /// Class that uses unmanaged code.
     /// </summary>
     internal class UnmanagedPInvoke
     {
+        private static object _legacyPInvoke = LegacyPInvoke.Initialize(); // TODO Only for .NET Framework support.
+
         #region Constants
 
         private const string LIBRARY_NAME = "UnmanagedCode";

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <!-- Targets MSBuild file for old .NET Framework assemblies support. -->
+  <ItemGroup>
+    <Runtimes Include="$(MSBuildThisFileDirectory)../runtimes/**"/>
+  </ItemGroup>
+
+  <Target Name="CopyPackage" BeforeTargets="BeforeBuild">
+    <!--<Unzip SourceFiles="$(MSBuildThisFileDirectory)..\lib\lib.zip"
+      DestinationFolder="$(OutputPath)"
+      OverwriteReadOnlyFiles="true"
+      ContinueOnError="true"/>-->
+    <Copy SourceFiles="@(Runtimes)" DestinationFolder="$(OutDir)runtimes/%(RecursiveDir)" SkipUnchangedFiles="true"/>
+  </Target>
+
+</Project>

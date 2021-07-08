@@ -36,3 +36,5 @@ packages/
 *.user
 *.VC.db
 *.VC.opendb
+
+# Project-specific files:

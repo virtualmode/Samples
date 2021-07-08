@@ -1,11 +1,7 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace PlatformInvoke
+namespace PInvokePackage
 {
     /// <summary>
     /// This solution is used commonly to present unmanaged object.

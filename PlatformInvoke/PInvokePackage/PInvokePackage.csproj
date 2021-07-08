@@ -1,0 +1,44 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <!-- Target frameworks allows to pack multiple implementation of managed code and use it with old code. -->
+    <TargetFrameworks>net5.0;net462</TargetFrameworks>
+    <Version>1.0.1</Version>
+    <Authors>virtualmode, virtualjohn, virtualjoe</Authors>
+    <Company>virtualcompany</Company>
+    <Copyright>Copyright © virtualcompany, 2020</Copyright>
+    <Description>Example package with native code support.</Description>
+    <RepositoryUrl>git@virtualmode:netsdkpack.git</RepositoryUrl>
+    <PackageProjectUrl>http://virtualmode/netsdkpack</PackageProjectUrl>
+    <!-- Mark packet with unmanaged code as native. -->
+    <PackageTags>native nativepackage</PackageTags>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <!-- Packing with symbols (aka *.symbols.nupkg) doing this way. -->
+    <IncludeSymbols>false</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <!-- Additional project settings. -->
+    <!--<PackageId/>
+    <Product/>
+    <RepositoryType/>
+    <PackageReleaseNotes/>
+    <NeutralLanguage/>
+    <PackageLicenseExpression/>
+    <PackageLicenseFile/>
+    <PackageRequireLicenseAcceptance/>
+    <PackageIcon/>
+    <PackageIconUrl/>
+    <RuntimeIdentifiers>win10-x86;win10-x64</RuntimeIdentifiers>-->
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- It's important that output directories will use appropriate common structure. -->
+    <Content Include="runtimes/**/*.dll;runtimes/**/*.so;runtimes/**/*.dylib">
+      <PackagePath>runtimes/%(RecursiveDir)%(Filename)%(Extension)</PackagePath>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Pack>true</Pack>
+    </Content>
+    <!-- Targets MSBuild file for old .NET Framework assemblies support. -->
+    <Content Include="PInvokePackage.targets" PackagePath="build" />
+  </ItemGroup>
+
+</Project>
