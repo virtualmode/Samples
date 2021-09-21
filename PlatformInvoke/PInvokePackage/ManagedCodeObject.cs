@@ -8,6 +8,12 @@ namespace PInvokePackage
     /// </summary>
     public class ManagedCodeObject : SafeHandle
     {
+        #region Constants
+
+        private const string NO_DESCRIPTION = "Can't obtain platform description.";
+
+        #endregion Constants
+
         #region Properties
 
         public override bool IsInvalid => handle == IntPtr.Zero;
@@ -40,7 +46,7 @@ namespace PInvokePackage
 
         public string GetPlatformDescription()
         {
-            return Marshal.PtrToStringAnsi(UnmanagedPInvoke.GetCustomDescription());
+            return Marshal.PtrToStringAnsi(UnmanagedPInvoke.GetCustomDescription()) ?? NO_DESCRIPTION;
         }
 
         #endregion Methods

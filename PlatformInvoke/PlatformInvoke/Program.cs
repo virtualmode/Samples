@@ -29,58 +29,48 @@
 
 // Project RID's <RuntimeIdentifiers>win10-x86;win10-x64</RuntimeIdentifiers> prompts only to download appropriate packages.
 
-using System;
 using System.Reflection;
 using System.Runtime.InteropServices;
 
 using PInvokePackage;
 
-namespace PlatformInvoke
+/// <summary>
+/// Custom dynamic link library resolver example.
+/// </summary>
+/// <param name="libraryName">It's very important to use only name without path and extension.</param>
+/// <param name="assembly">The assembly for which the resolver is registered.</param>
+/// <param name="searchPath">Specifies the paths that are used to search.</param>
+/// <returns>Dll handler.</returns>
+IntPtr DllImportResolver(string libraryName, Assembly assembly, DllImportSearchPath? searchPath)
 {
-    class Program
-    {
-        private static ManagedCodeObject _managedCodeObject;
+    //string library = $"{Environment.CurrentDirectory}/{(Environment.Is64BitProcess ? "x64" : "x86")}/lib{libraryName}.so";
+    //string library = $"{(Environment.Is64BitProcess ? "x64" : "x86")}/{libraryName}";
 
-        static void Main(string[] args)
-        {
-            // Register the import resolver before calling the imported function.
-            // Only one import resolver can be set for a given assembly (or typeof(MyClass).Assembly).
-            //NativeLibrary.SetDllImportResolver(Assembly.GetExecutingAssembly(), DllImportResolver);
+    if (NativeLibrary.TryLoad(libraryName,
+        assembly,
+        null, // Search without path modifiers in custom resolver.
+        out IntPtr result))
+        return result;
 
-            _managedCodeObject = ManagedCodeObject.Create();
+    //// MSDN example with AVX2 instructions.
+    //if (libraryName == "nativedep")
+    //{
+    //    // On systems with AVX2 support, load a different library.
+    //    if (System.Runtime.Intrinsics.X86.Avx2.IsSupported)
+    //        return NativeLibrary.Load("nativedep_avx2", assembly, searchPath);
+    //}
 
-            Console.WriteLine(".NET Core Platform Invoke example");
-            Console.WriteLine(_managedCodeObject.GetPlatformDescription());
-        }
-
-        /// <summary>
-        /// Custom dynamic link library resolver.
-        /// </summary>
-        /// <param name="libraryName">It's very important to use only name without path and extension.</param>
-        /// <param name="assembly">The assembly for which the resolver is registered.</param>
-        /// <param name="searchPath">Specifies the paths that are used to search.</param>
-        /// <returns></returns>
-        private static IntPtr DllImportResolver(string libraryName, Assembly assembly, DllImportSearchPath? searchPath)
-        {
-            //string library = $"{Environment.CurrentDirectory}/{(Environment.Is64BitProcess ? "x64" : "x86")}/lib{libraryName}.so";
-            //string library = $"{(Environment.Is64BitProcess ? "x64" : "x86")}/{libraryName}";
-
-            if (NativeLibrary.TryLoad(libraryName,
-                assembly,
-                null, // Search without path modifiers in custom resolver.
-                out IntPtr result))
-                return result;
-
-            //// MSDN example with AVX2 instructions.
-            //if (libraryName == "nativedep")
-            //{
-            //    // On systems with AVX2 support, load a different library.
-            //    if (System.Runtime.Intrinsics.X86.Avx2.IsSupported)
-            //        return NativeLibrary.Load("nativedep_avx2", assembly, searchPath);
-            //}
-
-            // Otherwise, fallback to default import resolver.
-            return IntPtr.Zero;
-        }
-    }
+    // Otherwise, fallback to default import resolver.
+    return IntPtr.Zero;
 }
+
+// Register the import resolver before calling the imported function.
+// Only one import resolver can be set for a given assembly (or typeof(MyClass).Assembly).
+//NativeLibrary.SetDllImportResolver(Assembly.GetExecutingAssembly(), DllImportResolver);
+
+var _managedCodeObject = ManagedCodeObject.Create();
+
+Console.WriteLine(".NET Core Platform Invoke example");
+Console.WriteLine(_managedCodeObject.GetPlatformDescription());
+
+return 0;

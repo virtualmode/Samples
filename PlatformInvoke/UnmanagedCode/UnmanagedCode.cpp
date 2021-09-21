@@ -23,7 +23,7 @@ const char *GetPlatformDescription()
 	ZeroMemory(&info, sizeof(OSVERSIONINFOEX));
 	info.dwOSVersionInfoSize = sizeof(OSVERSIONINFOEX);
 	GetVersionExW((LPOSVERSIONINFO)&info);
-	sprintf_s(_platformDescription, DESCRIPTION_SIZE, "Unmanaged %u-bit code for Windows %u.%u\n\0", sizeof(int*) * 8, info.dwMajorVersion, info.dwMinorVersion);
+	sprintf_s(_platformDescription, DESCRIPTION_SIZE, "Unmanaged %llu-bit code for Windows %lu.%lu\n\0", sizeof(int*) * 8, info.dwMajorVersion, info.dwMinorVersion);
 	return _platformDescription;
 }
 

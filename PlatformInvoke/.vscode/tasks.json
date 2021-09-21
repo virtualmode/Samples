@@ -14,7 +14,7 @@
                 "/property:GenerateFullPaths=true",
                 // Do not generate summary otherwise it leads to duplicate errors in Problems panel.
                 "/consoleloggerparameters:NoSummary"
-                //"-o ${workspaceFolder}/PlatformInvoke/bin/Debug/net5.0/"
+                //"-o ${workspaceFolder}/PlatformInvoke/bin/Debug/net6.0/"
             ],
             "group": "build",
             "problemMatcher": "$msCompile"
