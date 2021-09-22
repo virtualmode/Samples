@@ -24,6 +24,14 @@ PlatformInvoke
 
     dotnet pack -p:PackageVersion=1.0.0
 
+Для ручной сборки неуправляемого кода под Linux:
+
+    gcc -shared -o libUnmanagedCode.so -fPIC UnmanagedCode.cpp
+
+Сборка неуправляемого кода под macOS:
+
+    gcc -shared -o UnmanagedCode.dylib -fPIC UnmanagedCode.cpp
+
 
 Visual Studio Code
 ------------------

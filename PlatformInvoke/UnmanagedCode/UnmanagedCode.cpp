@@ -49,7 +49,7 @@ extern "C"
 
 __attribute__ ((visibility ("default"))) const char *GetPlatformDescription()
 {
-	sprintf(_platformDescription, "Unmanaged %u-bit code for macOS :)\n\0");
+	sprintf(_platformDescription, "Unmanaged %u-bit code for macOS :)\n\0", sizeof(int*) * 8);
 	return _platformDescription;
 }
 
