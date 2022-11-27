@@ -1,0 +1,3 @@
+[submodule "target.makefile"]
+	path = target.makefile
+	url = git@github.com:virtualmode/target.makefile.git
